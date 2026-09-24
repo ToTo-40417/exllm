@@ -37,6 +37,8 @@ python chat.py こんにちは
 
 電子辞書版、導入方法、実機ベンチマークは[`exllm-exword`](https://github.com/ToTo-40417/exllm-exword)を参照してください。Hugging Face版は公開準備中です。関連ツールとして[`exword-hardware-dump`](https://github.com/ToTo-40417/exword-hardware-dump)と[`exword-gnuboy-save-importer`](https://github.com/ToTo-40417/exword-gnuboy-save-importer)があります。
 
+RTX 3060での40回warm-up後・120試行の生ログは[`benchmarks/rtx3060-cuda-robust-20260925.json`](benchmarks/rtx3060-cuda-robust-20260925.json)、学習・lineageの機械可読情報は[`training/release-5m.json`](training/release-5m.json)に収録しています。
+
 ## ライセンス
 
 コード、公開重み、付属データはApache License 2.0です。詳細は[`LICENSE`](LICENSE)、[`NOTICE`](NOTICE)、[`DATA_PROVENANCE.md`](DATA_PROVENANCE.md)を参照してください。
@@ -66,5 +68,7 @@ python chat.py こんにちは
 ```
 
 The default checkpoint is `weights/EXLLM-v1.1-5m-release3.pt`. Standard LM Studio llama.cpp backends cannot load it directly because EXLLM is not a GGUF architecture. A Hugging Face release is being prepared. See [`exllm-exword`](https://github.com/ToTo-40417/exllm-exword) for the device runtime and benchmarks, plus [`exword-hardware-dump`](https://github.com/ToTo-40417/exword-hardware-dump) and [`exword-gnuboy-save-importer`](https://github.com/ToTo-40417/exword-gnuboy-save-importer) for related tools.
+
+The 40-warm-up/120-run RTX 3060 log is published as [`benchmarks/rtx3060-cuda-robust-20260925.json`](benchmarks/rtx3060-cuda-robust-20260925.json). Machine-readable training and lineage metadata is in [`training/release-5m.json`](training/release-5m.json).
 
 Released under Apache License 2.0. See [`LICENSE`](LICENSE), [`NOTICE`](NOTICE), and [`DATA_PROVENANCE.md`](DATA_PROVENANCE.md).

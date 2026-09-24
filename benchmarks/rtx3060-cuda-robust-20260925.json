@@ -1,0 +1,1266 @@
+{
+  "schema": "exllm-benchmark-robust-v1",
+  "checkpoint": "EXLLM-v1.1-5m-release3.pt",
+  "parameters": 5377824,
+  "torch": "2.11.0+cu130",
+  "load_seconds": 0.4645,
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "warmup_runs": 40,
+  "measured_runs": 120,
+  "first_warmup": {
+    "prompt": "こんにちは",
+    "input_tokens": 8,
+    "output_tokens": 24,
+    "ttft_ms": 193.056,
+    "total_ms": 304.518,
+    "decode_tokens_per_second": 206.348,
+    "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+    "bad_text": false
+  },
+  "last_warmup": {
+    "prompt": "オフラインとは何ですか？",
+    "input_tokens": 15,
+    "output_tokens": 14,
+    "ttft_ms": 4.024,
+    "total_ms": 58.565,
+    "decode_tokens_per_second": 238.355,
+    "text": "ウェブ検索はできません。",
+    "bad_text": false
+  },
+  "raw": {
+    "median_ttft_ms": 3.99,
+    "median_total_ms": 79.589,
+    "median_decode_tokens_per_second": 239.082
+  },
+  "tukey_1_5_iqr": {
+    "ttft": {
+      "kept": 120,
+      "removed": 0,
+      "fence": [
+        3.885874999999999,
+        4.0908750000000005
+      ],
+      "median_ms": 3.99
+    },
+    "total": {
+      "kept": 120,
+      "removed": 0,
+      "fence": [
+        -29.11774999999998,
+        194.55624999999998
+      ],
+      "median_ms": 79.589
+    },
+    "decode": {
+      "kept": 120,
+      "removed": 0,
+      "fence": [
+        220.07150000000001,
+        252.1735
+      ],
+      "median_tokens_per_second": 239.082
+    }
+  },
+  "runs": [
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.931,
+      "total_ms": 99.869,
+      "decode_tokens_per_second": 239.739,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.02,
+      "total_ms": 44.262,
+      "decode_tokens_per_second": 223.649,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.969,
+      "total_ms": 140.375,
+      "decode_tokens_per_second": 241.924,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.994,
+      "total_ms": 58.391,
+      "decode_tokens_per_second": 238.984,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.932,
+      "total_ms": 100.434,
+      "decode_tokens_per_second": 238.338,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.042,
+      "total_ms": 44.592,
+      "decode_tokens_per_second": 221.948,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.999,
+      "total_ms": 140.552,
+      "decode_tokens_per_second": 241.665,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.009,
+      "total_ms": 59.417,
+      "decode_tokens_per_second": 234.625,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.987,
+      "total_ms": 100.517,
+      "decode_tokens_per_second": 238.268,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.055,
+      "total_ms": 44.662,
+      "decode_tokens_per_second": 221.638,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 4.013,
+      "total_ms": 142.344,
+      "decode_tokens_per_second": 238.558,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.998,
+      "total_ms": 58.517,
+      "decode_tokens_per_second": 238.45,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.948,
+      "total_ms": 99.939,
+      "decode_tokens_per_second": 239.604,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.013,
+      "total_ms": 44.273,
+      "decode_tokens_per_second": 223.549,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.977,
+      "total_ms": 140.612,
+      "decode_tokens_per_second": 241.518,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.001,
+      "total_ms": 58.347,
+      "decode_tokens_per_second": 239.21,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.937,
+      "total_ms": 100.824,
+      "decode_tokens_per_second": 237.39,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.072,
+      "total_ms": 44.322,
+      "decode_tokens_per_second": 223.606,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.982,
+      "total_ms": 140.555,
+      "decode_tokens_per_second": 241.629,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.012,
+      "total_ms": 58.32,
+      "decode_tokens_per_second": 239.375,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.962,
+      "total_ms": 100.061,
+      "decode_tokens_per_second": 239.336,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.003,
+      "total_ms": 44.08,
+      "decode_tokens_per_second": 224.564,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.956,
+      "total_ms": 140.53,
+      "decode_tokens_per_second": 241.628,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.0,
+      "total_ms": 58.306,
+      "decode_tokens_per_second": 239.384,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.913,
+      "total_ms": 100.148,
+      "decode_tokens_per_second": 238.998,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.031,
+      "total_ms": 44.129,
+      "decode_tokens_per_second": 224.451,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.98,
+      "total_ms": 140.593,
+      "decode_tokens_per_second": 241.558,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.98,
+      "total_ms": 58.181,
+      "decode_tokens_per_second": 239.85,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.957,
+      "total_ms": 100.275,
+      "decode_tokens_per_second": 238.791,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.029,
+      "total_ms": 44.139,
+      "decode_tokens_per_second": 224.381,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.963,
+      "total_ms": 140.51,
+      "decode_tokens_per_second": 241.675,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.987,
+      "total_ms": 58.361,
+      "decode_tokens_per_second": 239.088,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.978,
+      "total_ms": 99.76,
+      "decode_tokens_per_second": 240.129,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.014,
+      "total_ms": 44.151,
+      "decode_tokens_per_second": 224.23,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.964,
+      "total_ms": 140.742,
+      "decode_tokens_per_second": 241.266,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.992,
+      "total_ms": 58.387,
+      "decode_tokens_per_second": 238.993,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.939,
+      "total_ms": 99.956,
+      "decode_tokens_per_second": 239.54,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.034,
+      "total_ms": 44.249,
+      "decode_tokens_per_second": 223.797,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.989,
+      "total_ms": 140.897,
+      "decode_tokens_per_second": 241.037,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.012,
+      "total_ms": 58.699,
+      "decode_tokens_per_second": 237.718,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.965,
+      "total_ms": 100.169,
+      "decode_tokens_per_second": 239.075,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.06,
+      "total_ms": 44.561,
+      "decode_tokens_per_second": 222.22,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.973,
+      "total_ms": 140.606,
+      "decode_tokens_per_second": 241.523,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.971,
+      "total_ms": 58.316,
+      "decode_tokens_per_second": 239.21,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.92,
+      "total_ms": 100.053,
+      "decode_tokens_per_second": 239.253,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.014,
+      "total_ms": 44.205,
+      "decode_tokens_per_second": 223.93,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.99,
+      "total_ms": 140.278,
+      "decode_tokens_per_second": 242.134,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.969,
+      "total_ms": 58.101,
+      "decode_tokens_per_second": 240.154,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.928,
+      "total_ms": 99.947,
+      "decode_tokens_per_second": 239.534,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.031,
+      "total_ms": 44.152,
+      "decode_tokens_per_second": 224.321,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 4.001,
+      "total_ms": 140.242,
+      "decode_tokens_per_second": 242.218,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.984,
+      "total_ms": 58.557,
+      "decode_tokens_per_second": 238.215,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.913,
+      "total_ms": 100.087,
+      "decode_tokens_per_second": 239.151,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.052,
+      "total_ms": 44.268,
+      "decode_tokens_per_second": 223.79,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.99,
+      "total_ms": 140.926,
+      "decode_tokens_per_second": 240.988,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.996,
+      "total_ms": 58.353,
+      "decode_tokens_per_second": 239.16,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.968,
+      "total_ms": 100.327,
+      "decode_tokens_per_second": 238.692,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.044,
+      "total_ms": 44.639,
+      "decode_tokens_per_second": 221.698,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.988,
+      "total_ms": 140.54,
+      "decode_tokens_per_second": 241.666,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.014,
+      "total_ms": 58.378,
+      "decode_tokens_per_second": 239.129,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.933,
+      "total_ms": 100.002,
+      "decode_tokens_per_second": 239.412,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.057,
+      "total_ms": 44.258,
+      "decode_tokens_per_second": 223.87,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.949,
+      "total_ms": 140.897,
+      "decode_tokens_per_second": 240.968,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.984,
+      "total_ms": 58.534,
+      "decode_tokens_per_second": 238.31,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.958,
+      "total_ms": 100.283,
+      "decode_tokens_per_second": 238.776,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.064,
+      "total_ms": 44.48,
+      "decode_tokens_per_second": 222.68,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.971,
+      "total_ms": 141.188,
+      "decode_tokens_per_second": 240.496,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.003,
+      "total_ms": 58.531,
+      "decode_tokens_per_second": 238.408,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.951,
+      "total_ms": 100.5,
+      "decode_tokens_per_second": 238.222,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.053,
+      "total_ms": 44.364,
+      "decode_tokens_per_second": 223.263,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.992,
+      "total_ms": 140.938,
+      "decode_tokens_per_second": 240.97,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.988,
+      "total_ms": 58.44,
+      "decode_tokens_per_second": 238.741,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.942,
+      "total_ms": 100.19,
+      "decode_tokens_per_second": 238.966,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.039,
+      "total_ms": 44.427,
+      "decode_tokens_per_second": 222.84,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.995,
+      "total_ms": 140.975,
+      "decode_tokens_per_second": 240.912,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.983,
+      "total_ms": 58.464,
+      "decode_tokens_per_second": 238.615,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.949,
+      "total_ms": 100.054,
+      "decode_tokens_per_second": 239.322,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.072,
+      "total_ms": 44.404,
+      "decode_tokens_per_second": 223.146,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.985,
+      "total_ms": 140.609,
+      "decode_tokens_per_second": 241.538,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.011,
+      "total_ms": 58.503,
+      "decode_tokens_per_second": 238.568,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.94,
+      "total_ms": 100.041,
+      "decode_tokens_per_second": 239.331,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.021,
+      "total_ms": 44.183,
+      "decode_tokens_per_second": 224.091,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.954,
+      "total_ms": 140.591,
+      "decode_tokens_per_second": 241.516,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.963,
+      "total_ms": 58.28,
+      "decode_tokens_per_second": 239.335,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.95,
+      "total_ms": 100.182,
+      "decode_tokens_per_second": 239.004,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.053,
+      "total_ms": 44.243,
+      "decode_tokens_per_second": 223.938,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.978,
+      "total_ms": 141.061,
+      "decode_tokens_per_second": 240.73,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.001,
+      "total_ms": 58.506,
+      "decode_tokens_per_second": 238.511,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.95,
+      "total_ms": 100.129,
+      "decode_tokens_per_second": 239.138,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.047,
+      "total_ms": 44.332,
+      "decode_tokens_per_second": 223.404,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.975,
+      "total_ms": 140.585,
+      "decode_tokens_per_second": 241.563,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.979,
+      "total_ms": 58.304,
+      "decode_tokens_per_second": 239.301,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.922,
+      "total_ms": 100.302,
+      "decode_tokens_per_second": 238.64,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.042,
+      "total_ms": 44.33,
+      "decode_tokens_per_second": 223.393,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.997,
+      "total_ms": 140.985,
+      "decode_tokens_per_second": 240.896,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.006,
+      "total_ms": 58.363,
+      "decode_tokens_per_second": 239.157,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.94,
+      "total_ms": 100.091,
+      "decode_tokens_per_second": 239.208,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.051,
+      "total_ms": 44.265,
+      "decode_tokens_per_second": 223.8,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.956,
+      "total_ms": 140.628,
+      "decode_tokens_per_second": 241.454,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.997,
+      "total_ms": 58.529,
+      "decode_tokens_per_second": 238.393,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.94,
+      "total_ms": 100.004,
+      "decode_tokens_per_second": 239.425,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.042,
+      "total_ms": 44.257,
+      "decode_tokens_per_second": 223.797,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.996,
+      "total_ms": 140.957,
+      "decode_tokens_per_second": 240.946,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.008,
+      "total_ms": 58.759,
+      "decode_tokens_per_second": 237.439,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.953,
+      "total_ms": 100.107,
+      "decode_tokens_per_second": 239.201,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.014,
+      "total_ms": 44.313,
+      "decode_tokens_per_second": 223.331,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 4.014,
+      "total_ms": 141.071,
+      "decode_tokens_per_second": 240.776,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.004,
+      "total_ms": 58.664,
+      "decode_tokens_per_second": 237.834,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.924,
+      "total_ms": 99.978,
+      "decode_tokens_per_second": 239.449,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.027,
+      "total_ms": 44.737,
+      "decode_tokens_per_second": 221.078,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 4.052,
+      "total_ms": 140.769,
+      "decode_tokens_per_second": 241.375,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 3.98,
+      "total_ms": 58.193,
+      "decode_tokens_per_second": 239.793,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.928,
+      "total_ms": 99.848,
+      "decode_tokens_per_second": 239.784,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.009,
+      "total_ms": 44.317,
+      "decode_tokens_per_second": 223.281,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.992,
+      "total_ms": 140.695,
+      "decode_tokens_per_second": 241.4,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.022,
+      "total_ms": 58.849,
+      "decode_tokens_per_second": 237.11,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    },
+    {
+      "prompt": "こんにちは",
+      "input_tokens": 8,
+      "output_tokens": 24,
+      "ttft_ms": 3.957,
+      "total_ms": 100.025,
+      "decode_tokens_per_second": 239.414,
+      "text": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "bad_text": false
+    },
+    {
+      "prompt": "あなたは何というモデルですか？",
+      "input_tokens": 18,
+      "output_tokens": 10,
+      "ttft_ms": 4.045,
+      "total_ms": 44.274,
+      "decode_tokens_per_second": 223.722,
+      "text": "私はEXLLMです。",
+      "bad_text": false
+    },
+    {
+      "prompt": "RAMとは何ですか？",
+      "input_tokens": 13,
+      "output_tokens": 34,
+      "ttft_ms": 3.978,
+      "total_ms": 140.529,
+      "decode_tokens_per_second": 241.669,
+      "text": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "bad_text": false
+    },
+    {
+      "prompt": "オフラインとは何ですか？",
+      "input_tokens": 15,
+      "output_tokens": 14,
+      "ttft_ms": 4.028,
+      "total_ms": 58.501,
+      "decode_tokens_per_second": 238.652,
+      "text": "ウェブ検索はできません。",
+      "bad_text": false
+    }
+  ]
+}

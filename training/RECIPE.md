@@ -1,6 +1,6 @@
 # Training / reproducibility notes
 
-EXLLM v1.0.0 was trained from a fresh random initialization. No TinyJP/beta weights were used.
+The EXLLM project originates from random initialization. The 5M release was expanded from an earlier in-project EXLLM checkpoint by transplanting dimension-compatible parameters. No external pretrained checkpoint, including TinyJP/beta, was used.
 
 The development process was iterative:
 

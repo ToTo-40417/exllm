@@ -1,0 +1,49 @@
+{
+  "schema": "exllm-training-release-v1",
+  "model": "EXLLM-0.005B-Instruct",
+  "checkpoint": "weights/EXLLM-v1.1-5m-release3.pt",
+  "checkpoint_sha256": "48ad00c6640689595a253fc949cad83f3000e14cccdf69275fcf245e85be3ceb",
+  "parameters": 5377824,
+  "parameters_billions": 0.005377824,
+  "global_step": 1810,
+  "lineage": {
+    "project_origin": "random initialization",
+    "release_parent": "earlier in-project EXLLM checkpoint",
+    "expansion": "dimension-compatible parameter transplantation",
+    "external_pretrained_checkpoint": null
+  },
+  "architecture": {
+    "vocab_size": 868,
+    "max_seq_len": 128,
+    "d_model": 288,
+    "n_layers": 6,
+    "n_heads": 9,
+    "d_ff": 896,
+    "activation": "relu",
+    "normalization": "pre-norm RMSNorm",
+    "rms_eps": 0.00001,
+    "position_encoding": "learned absolute"
+  },
+  "base_training": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0005,
+    "betas": [0.9, 0.95],
+    "weight_decay": 0.03,
+    "gradient_clip_norm": 1.0,
+    "schedule": "linear warm-up and cosine decay"
+  },
+  "final_corrective_stage": {
+    "source": "weights/EXLLM-v1.1-5m-release2.pt",
+    "data": "data/v1_1_release_fix.jsonl",
+    "steps": 100,
+    "learning_rate": 0.000006,
+    "loss_first": 0.038745223909500054,
+    "loss_last": 0.024198499539634214
+  },
+  "published_staged_data": {
+    "jsonl_file_records": 86408,
+    "records_millions": 0.086408,
+    "deduplicated": false,
+    "note": "Sum of records across overlapping staged files; not a unique-example count."
+  }
+}

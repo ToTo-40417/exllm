@@ -54,7 +54,7 @@ The model has only ~5.38M parameters. Unseen concepts, complicated instructions,
 
 ## Training provenance
 
-The released model was initialized from random weights for this project. It does not inherit TinyJP/beta weights. The published training JSONL files were generated for EXLLM and are included in `data/` for inspection. See `DATA_PROVENANCE.md`.
+The EXLLM project originates from random initialization. The 5M release was expanded from an earlier in-project EXLLM checkpoint by transplanting dimension-compatible parameters. No external pretrained checkpoint, including TinyJP/beta, was used. The published training JSONL files were generated for EXLLM and are included in `data/` for inspection. See `DATA_PROVENANCE.md`.
 
 ## Quantization
 
