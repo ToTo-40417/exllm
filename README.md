@@ -35,7 +35,7 @@ python chat.py こんにちは
 
 標準checkpointは`weights/EXLLM-v1.1-5m-release3.pt`です。LM Studioの標準llama.cpp backendはGGUF専用のため、この独自アーキテクチャを直接ロードできません。
 
-電子辞書版、導入方法、実機ベンチマークは[`exllm-exword`](https://github.com/ToTo-40417/exllm-exword)を参照してください。
+電子辞書版、導入方法、実機ベンチマークは[`exllm-exword`](https://github.com/ToTo-40417/exllm-exword)を参照してください。モデルファイルは[`Hugging Face`](https://huggingface.co/ToTo-40417/EXLLM)からも取得できます。関連ツールとして[`exword-hardware-dump`](https://github.com/ToTo-40417/exword-hardware-dump)と[`exword-gnuboy-save-importer`](https://github.com/ToTo-40417/exword-gnuboy-save-importer)があります。
 
 ## ライセンス
 
@@ -65,6 +65,6 @@ pip install -r requirements.txt
 python chat.py こんにちは
 ```
 
-The default checkpoint is `weights/EXLLM-v1.1-5m-release3.pt`. Standard LM Studio llama.cpp backends cannot load it directly because EXLLM is not a GGUF architecture. See [`exllm-exword`](https://github.com/ToTo-40417/exllm-exword) for the device runtime, installation notes, and physical-device benchmarks.
+The default checkpoint is `weights/EXLLM-v1.1-5m-release3.pt`. Standard LM Studio llama.cpp backends cannot load it directly because EXLLM is not a GGUF architecture. The model is also available on [`Hugging Face`](https://huggingface.co/ToTo-40417/EXLLM). See [`exllm-exword`](https://github.com/ToTo-40417/exllm-exword) for the device runtime and benchmarks, plus [`exword-hardware-dump`](https://github.com/ToTo-40417/exword-hardware-dump) and [`exword-gnuboy-save-importer`](https://github.com/ToTo-40417/exword-gnuboy-save-importer) for related tools.
 
 Released under Apache License 2.0. See [`LICENSE`](LICENSE), [`NOTICE`](NOTICE), and [`DATA_PROVENANCE.md`](DATA_PROVENANCE.md).
