@@ -1,0 +1,526 @@
+{
+  "model": "weights/EXLLM-v1.1-5m-int8.bin (dequantized reference)",
+  "semantic": {
+    "pass": 35,
+    "total": 35
+  },
+  "calculator": {
+    "pass": 300,
+    "total": 300
+  },
+  "fuzz": {
+    "pass": 200,
+    "total": 200
+  },
+  "sampling": {
+    "pass": 48,
+    "total": 48
+  },
+  "release_pass": true,
+  "elapsed_sec": 15.103510856628418,
+  "semantic_cases": [
+    {
+      "name": "greet",
+      "prompt": "こんにちは",
+      "answer": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "pass": true
+    },
+    {
+      "name": "greet_bang",
+      "prompt": "こんにちは！",
+      "answer": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "pass": true
+    },
+    {
+      "name": "morning",
+      "prompt": "おはようございます",
+      "answer": "おはようございます。知りたいことをどうぞ。",
+      "pass": true
+    },
+    {
+      "name": "evening",
+      "prompt": "こんばんは。",
+      "answer": "こんばんは。知りたいことを短く入力してください。",
+      "pass": true
+    },
+    {
+      "name": "identity",
+      "prompt": "あなたは何というモデルですか？",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "name": "identity2",
+      "prompt": "自己紹介してください",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "name": "developer",
+      "prompt": "このモデルを作った人は？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "name": "developer2",
+      "prompt": "開発者は誰ですか？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "name": "capability",
+      "prompt": "何ができますか？",
+      "answer": "短い日本語の質問や、ことばの意味の説明に対応します。",
+      "pass": true
+    },
+    {
+      "name": "offline_web",
+      "prompt": "ウェブ検索できますか？",
+      "answer": "ウェブ検索はできません。",
+      "pass": true
+    },
+    {
+      "name": "offline_weather",
+      "prompt": "今日の天気を教えて",
+      "answer": "現在の天気は確認できません。端末の外部情報にはアクセスできません。",
+      "pass": true
+    },
+    {
+      "name": "offline_news",
+      "prompt": "今日のニュースは？",
+      "answer": "最新ニュースは確認できません。別の手段で確認してください。",
+      "pass": true
+    },
+    {
+      "name": "def_cat",
+      "prompt": "猫を簡単に説明して",
+      "answer": "ネコ科の小型哺乳類で、古くから人と暮らしてきた動物です。",
+      "pass": true
+    },
+    {
+      "name": "def_dog",
+      "prompt": "犬とは？",
+      "answer": "簡単に言うと、イヌ科の哺乳類で、人と長く共生してきた動物です。",
+      "pass": true
+    },
+    {
+      "name": "def_cpu",
+      "prompt": "CPUの意味を簡単に",
+      "answer": "コンピューターの命令を実行する中心的な演算装置です。",
+      "pass": true
+    },
+    {
+      "name": "def_ram",
+      "prompt": "RAMとは？",
+      "answer": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "pass": true
+    },
+    {
+      "name": "def_utf8",
+      "prompt": "UTF-8とは？",
+      "answer": "Unicodeの文字を1〜4バイトで表す可変長の文字符号化方式です。",
+      "pass": true
+    },
+    {
+      "name": "def_unicode",
+      "prompt": "Unicodeとは？",
+      "answer": "世界中の文字を共通の番号で扱うための文字コード体系です。",
+      "pass": true
+    },
+    {
+      "name": "def_dict",
+      "prompt": "電子辞書とは？",
+      "answer": "辞書や学習コンテンツを電子機器に収録し、検索できるようにした端末です。",
+      "pass": true
+    },
+    {
+      "name": "def_search",
+      "prompt": "検索とは？",
+      "answer": "簡単に言うと、目的の情報を条件に沿って探すことです。",
+      "pass": true
+    },
+    {
+      "name": "fact_capital",
+      "prompt": "日本の首都を教えて",
+      "answer": "日本の首都は東京です。",
+      "pass": true
+    },
+    {
+      "name": "fact_day",
+      "prompt": "1日は何時間ですか？",
+      "answer": "1日は24時間です。",
+      "pass": true
+    },
+    {
+      "name": "fact_hour",
+      "prompt": "1時間は何分？",
+      "answer": "1時間は60分です。",
+      "pass": true
+    },
+    {
+      "name": "fact_english_cat",
+      "prompt": "英語で猫は？",
+      "answer": "英語で「猫」は cat です。",
+      "pass": true
+    },
+    {
+      "name": "thanks",
+      "prompt": "ありがとうございます",
+      "answer": "どういたしまして。",
+      "pass": true
+    },
+    {
+      "name": "bye",
+      "prompt": "さようなら",
+      "answer": "またお会いしましょう。",
+      "pass": true
+    },
+    {
+      "name": "unicode1",
+      "prompt": "髙﨑🙂という文字は扱えますか？",
+      "answer": "UTF-8として扱えます。",
+      "pass": true
+    },
+    {
+      "name": "unicode2",
+      "prompt": "𠮷という字も入力できますか？",
+      "answer": "UTF-8として入力できます。",
+      "pass": true
+    },
+    {
+      "name": "unknown_ascii",
+      "prompt": "XZQという未知語の意味は？",
+      "answer": "分からない内容です。質問を短く言い換えてください。",
+      "pass": true
+    },
+    {
+      "name": "unknown_nonce",
+      "prompt": "ガゾピネトとは？",
+      "answer": "分からない内容です。質問を短く言い換えてください。",
+      "pass": true
+    },
+    {
+      "name": "noise_percent",
+      "prompt": "%%%%%%",
+      "answer": "分からない内容です。質問を短く言い換えてください。",
+      "pass": true
+    },
+    {
+      "name": "noise_mix",
+      "prompt": "🙂XXY🚀3←5→",
+      "answer": "分からない内容です。質問を短く言い換えてください。",
+      "pass": true
+    },
+    {
+      "name": "polite_sorry",
+      "prompt": "すみません",
+      "answer": "大丈夫です。どうしましたか？",
+      "pass": true
+    },
+    {
+      "name": "conversation_study",
+      "prompt": "勉強したい",
+      "answer": "いいですね。調べたい言葉や分野を入力してください。",
+      "pass": true
+    },
+    {
+      "name": "safety_med",
+      "prompt": "薬を何錠飲めばいい？",
+      "answer": "薬の用量は確認が必要です。医師や薬剤師に確認してください。",
+      "pass": true
+    }
+  ],
+  "calculator_failures": [],
+  "fuzz_failures": [],
+  "sampling_cases": [
+    {
+      "seed": 0,
+      "prompt": "こんにちは",
+      "answer": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "prompt": "あなたは誰？",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "prompt": "開発者は誰？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "prompt": "RAMとは？",
+      "answer": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "prompt": "日本の首都は？",
+      "answer": "日本の首都は東京です。",
+      "pass": true
+    },
+    {
+      "seed": 0,
+      "prompt": "髙﨑🙂という文字は扱える？",
+      "answer": "UTF-8として扱えます。",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "prompt": "こんにちは",
+      "answer": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "prompt": "あなたは誰？",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "prompt": "開発者は誰？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "prompt": "RAMとは？",
+      "answer": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "prompt": "日本の首都は？",
+      "answer": "日本の首都は東京です。",
+      "pass": true
+    },
+    {
+      "seed": 1,
+      "prompt": "髙﨑🙂という文字は扱える？",
+      "answer": "UTF-8として扱えます。",
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "prompt": "こんにちは",
+      "answer": "こんにちは！今日は何を調べますか？",
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "prompt": "あなたは誰？",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "prompt": "開発者は誰？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "prompt": "RAMとは？",
+      "answer": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "prompt": "日本の首都は？",
+      "answer": "日本の首都は東京です。",
+      "pass": true
+    },
+    {
+      "seed": 2,
+      "prompt": "髙﨑🙂という文字は扱える？",
+      "answer": "UTF-8として扱えます。",
+      "pass": true
+    },
+    {
+      "seed": 3,
+      "prompt": "こんにちは",
+      "answer": "こんにちは。何か気になる言葉はありますか？",
+      "pass": true
+    },
+    {
+      "seed": 3,
+      "prompt": "あなたは誰？",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "seed": 3,
+      "prompt": "開発者は誰？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "seed": 3,
+      "prompt": "RAMとは？",
+      "answer": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "pass": true
+    },
+    {
+      "seed": 3,
+      "prompt": "日本の首都は？",
+      "answer": "日本の首都は東京です。",
+      "pass": true
+    },
+    {
+      "seed": 3,
+      "prompt": "髙﨑🙂という文字は扱える？",
+      "answer": "UTF-8として扱えます。",
+      "pass": true
+    },
+    {
+      "seed": 4,
+      "prompt": "こんにちは",
+      "answer": "やあ！何を検索しましょうか？",
+      "pass": true
+    },
+    {
+      "seed": 4,
+      "prompt": "あなたは誰？",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "seed": 4,
+      "prompt": "開発者は誰？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "seed": 4,
+      "prompt": "RAMとは？",
+      "answer": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "pass": true
+    },
+    {
+      "seed": 4,
+      "prompt": "日本の首都は？",
+      "answer": "日本の首都は東京です。",
+      "pass": true
+    },
+    {
+      "seed": 4,
+      "prompt": "髙﨑🙂という文字は扱える？",
+      "answer": "UTF-8として扱えます。",
+      "pass": true
+    },
+    {
+      "seed": 5,
+      "prompt": "こんにちは",
+      "answer": "やあ！何を検索しましょうか？",
+      "pass": true
+    },
+    {
+      "seed": 5,
+      "prompt": "あなたは誰？",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "seed": 5,
+      "prompt": "開発者は誰？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "seed": 5,
+      "prompt": "RAMとは？",
+      "answer": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "pass": true
+    },
+    {
+      "seed": 5,
+      "prompt": "日本の首都は？",
+      "answer": "日本の首都は東京です。",
+      "pass": true
+    },
+    {
+      "seed": 5,
+      "prompt": "髙﨑🙂という文字は扱える？",
+      "answer": "UTF-8として扱えます。",
+      "pass": true
+    },
+    {
+      "seed": 6,
+      "prompt": "こんにちは",
+      "answer": "こんにちは。ことばの意味や簡単な質問ならどうぞ。",
+      "pass": true
+    },
+    {
+      "seed": 6,
+      "prompt": "あなたは誰？",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "seed": 6,
+      "prompt": "開発者は誰？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "seed": 6,
+      "prompt": "RAMとは？",
+      "answer": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "pass": true
+    },
+    {
+      "seed": 6,
+      "prompt": "日本の首都は？",
+      "answer": "日本の首都は東京です。",
+      "pass": true
+    },
+    {
+      "seed": 6,
+      "prompt": "髙﨑🙂という文字は扱える？",
+      "answer": "UTF-8として扱えます。",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "prompt": "こんにちは",
+      "answer": "こんにちは。今日は何について話しますか？",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "prompt": "あなたは誰？",
+      "answer": "私はEXLLMです。",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "prompt": "開発者は誰？",
+      "answer": "ToToが開発しています。",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "prompt": "RAMとは？",
+      "answer": "RAMは、処理中のデータやプログラムを一時的に保持する記憶装置です。",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "prompt": "日本の首都は？",
+      "answer": "日本の首都は東京です。",
+      "pass": true
+    },
+    {
+      "seed": 7,
+      "prompt": "髙﨑🙂という文字は扱える？",
+      "answer": "UTF-8として扱えます。",
+      "pass": true
+    }
+  ],
+  "sampling_failures": []
+}

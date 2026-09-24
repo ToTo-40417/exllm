@@ -1,0 +1,8 @@
+{
+  "model": "EXLLM-v1.0.0.safetensors",
+  "n": 200,
+  "seed": 3003,
+  "failures": 0,
+  "elapsed_sec": 19.408974647521973,
+  "failure_cases": []
+}

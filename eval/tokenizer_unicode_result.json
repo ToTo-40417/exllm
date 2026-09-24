@@ -1,0 +1,7 @@
+{
+  "valid_utf8_sequences": 19968,
+  "roundtrips": 5000,
+  "invalid_cases": 10,
+  "failures": 0,
+  "failure_cases": []
+}

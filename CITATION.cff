@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "EXLLM"
+message: "If you use EXLLM, please cite this release."
+type: software
+authors:
+  - name: "ToTo"
+version: "1.0.0"
+date-released: "2026-09-22"
+license: "Apache-2.0"

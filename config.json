@@ -1,0 +1,9 @@
+{
+  "vocab_size": 868,
+  "max_seq_len": 128,
+  "d_model": 288,
+  "n_layers": 6,
+  "n_heads": 9,
+  "d_ff": 896,
+  "rms_eps": 1e-05
+}

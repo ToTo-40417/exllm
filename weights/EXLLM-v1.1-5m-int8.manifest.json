@@ -1,0 +1,31 @@
+{
+  "format": "EXLLM8",
+  "format_version": 1,
+  "model": "EXLLM",
+  "model_version": "1.1.0-5m",
+  "architecture": "decoder-only Transformer, RMSNorm, ReLU, tied token/lm-head embedding",
+  "config": {
+    "vocab_size": 868,
+    "max_seq_len": 128,
+    "d_model": 288,
+    "n_layers": 6,
+    "n_heads": 9,
+    "d_ff": 896,
+    "rms_eps": 1e-05
+  },
+  "unique_parameters": 5377824,
+  "tokenizer": "hybrid-char-byte-fallback",
+  "tokenizer_vocab": 868,
+  "quantization": {
+    "matrix_weights": "symmetric int8 per output row",
+    "matrix_scale": "float32 per row",
+    "rmsnorm_weights": "float16"
+  },
+  "aliases": {
+    "lm_head.weight": "tok.weight"
+  },
+  "tensor_count": 39,
+  "file": "weights/EXLLM-v1.1-5m-int8.bin",
+  "bytes": 5443105,
+  "sha256": "3b2bf2d9f103cba714bc98976709c5ad34860c1ff55fed2fce91fc95afb5b34a"
+}
