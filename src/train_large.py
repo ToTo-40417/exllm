@@ -5,7 +5,7 @@ from torch.utils.data import DataLoader
 from .model import EXLLM,EXLLMConfig
 from .tokenizer import HybridTokenizer
 from .train import J,collate,ev
-from .loader import load_release_model
+from safetensors.torch import load_model as load_safetensors
 
 def transplant(dst,src):
     od=src.cfg.d_model; nd=dst.cfg.d_model; of=src.cfg.d_ff
@@ -25,10 +25,12 @@ def transplant(dst,src):
         dst.norm.weight.fill_(1);dst.norm.weight[:od].copy_(src.norm.weight)
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--epochs',type=int,default=10);ap.add_argument('--batch',type=int,default=64);ap.add_argument('--lr',type=float,default=5e-4);ap.add_argument('--threads',type=int,default=8);ap.add_argument('--data',default='data/mix.jsonl');ap.add_argument('--valid',default='data/valid.jsonl');ap.add_argument('--out',default='weights/EXLLM-v1.1-large.pt');ap.add_argument('--d-model',type=int,default=288);ap.add_argument('--layers',type=int,default=6);ap.add_argument('--heads',type=int,default=9);ap.add_argument('--d-ff',type=int,default=896);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--epochs',type=int,default=10);ap.add_argument('--batch',type=int,default=64);ap.add_argument('--lr',type=float,default=5e-4);ap.add_argument('--threads',type=int,default=8);ap.add_argument('--data',default='data/mix.jsonl');ap.add_argument('--valid',default='data/valid.jsonl');ap.add_argument('--out',default='weights/EXLLM-v1.1-large.pt');ap.add_argument('--parent',default='weights/EXLLM-v1.0.0.safetensors');ap.add_argument('--parent-config',default='config-v1.0.json');ap.add_argument('--d-model',type=int,default=288);ap.add_argument('--layers',type=int,default=6);ap.add_argument('--heads',type=int,default=9);ap.add_argument('--d-ff',type=int,default=896);a=ap.parse_args()
     torch.manual_seed(20260923);random.seed(20260923);torch.set_num_threads(a.threads)
     tok=HybridTokenizer.load('tokenizer.json');cfg=EXLLMConfig(vocab_size=tok.vocab_size,d_model=a.d_model,n_layers=a.layers,n_heads=a.heads,d_ff=a.d_ff,max_seq_len=128)
-    teacher,_=load_release_model('.');m=EXLLM(cfg);transplant(m,teacher);del teacher
+    parent_cfg=EXLLMConfig(**json.loads(Path(a.parent_config).read_text(encoding='utf-8')))
+    teacher=EXLLM(parent_cfg);load_safetensors(teacher,a.parent,strict=True);teacher.eval()
+    m=EXLLM(cfg);transplant(m,teacher);del teacher
     tr=J(a.data,tok,cfg.max_seq_len);va=J(a.valid,tok,cfg.max_seq_len)
     tl=DataLoader(tr,batch_size=a.batch,shuffle=True,collate_fn=lambda b:collate(b,tok.PAD));vl=DataLoader(va,batch_size=a.batch,shuffle=False,collate_fn=lambda b:collate(b,tok.PAD))
     opt=torch.optim.AdamW(m.parameters(),lr=a.lr,betas=(.9,.95),weight_decay=.03);total=a.epochs*len(tl);warm=max(20,int(total*.04));step=0;best=1e9;hist=[];t0=time.time()

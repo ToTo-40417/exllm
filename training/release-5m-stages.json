@@ -1,0 +1,104 @@
+{
+  "schema": "exllm-training-stages-v1",
+  "scope": "Direct lineage from the published v1.0 project checkpoint through the 5M release",
+  "seed_policy": {
+    "expansion": 20260923,
+    "corrective_stages": 20260924,
+    "corrective_sampling": "20260924 + input checkpoint global_step"
+  },
+  "parent": {
+    "checkpoint": "weights/EXLLM-v1.0.0.safetensors",
+    "sha256": "caad6a93aa2a8f6f2b525c4671dc8d2f8e4328d262a093172a55c672cd4e24c9",
+    "config": "config-v1.0.json",
+    "origin": "Earlier in-project EXLLM release trained from random initialization",
+    "external_pretrained_checkpoint": null
+  },
+  "input_artifacts": {
+    "config-v1.0.json": "4f8ec8792299a5a4a7b6f636748779ccc2f7e3f16cbfa180865ab572c793a090",
+    "tokenizer.json": "4c2a583b554e8165936cb3b11727f79d2ede43b73d416a48681f8d38385f5964",
+    "data/mix.jsonl": "3cbf8c724def49546c56c457fd3dc5b33feced6309b8a13c3a1cac904d44e51a",
+    "data/valid.jsonl": "63cb1a220df46ddc013410858d5dd2ee851529960cb9c1bf1ab78988c0205899",
+    "data/final_consistent.jsonl": "e76a5cc604b29296aae811bebfffd1db59f95c06360fd1c70cb8c93bdb46f20b",
+    "data/v1_1_release_fix.jsonl": "f8426b9eef53e0eb597d6b9572bf0439a2bd2c01617e588110f28b3f361cd2d7"
+  },
+  "stages": [
+    {
+      "name": "expand-and-train-5m",
+      "runner": "src.train_large",
+      "input": "weights/EXLLM-v1.0.0.safetensors",
+      "output": "weights/EXLLM-v1.1-5m.pt",
+      "output_sha256": "03cf2db5795871920911300b9f980f3fac6a27a590ae537866c2fdcbbe2fb0d0",
+      "data": "data/mix.jsonl",
+      "valid": "data/valid.jsonl",
+      "epochs": 8,
+      "batch": 128,
+      "threads": 8,
+      "learning_rate": 0.0005,
+      "d_model": 288,
+      "layers": 6,
+      "heads": 9,
+      "d_ff": 896
+    },
+    {
+      "name": "fix1",
+      "runner": "src.finetune",
+      "input": "weights/EXLLM-v1.1-5m.pt",
+      "output": "weights/EXLLM-v1.1-5m-fix1.pt",
+      "output_sha256": "39a5136b12cb13ad9e1d8d20d7d802b6b78ca1a5b68a82ffc5baed79101c79ba",
+      "data": "data/final_consistent.jsonl",
+      "steps": 800,
+      "batch": 64,
+      "threads": 8,
+      "learning_rate": 0.00012
+    },
+    {
+      "name": "final",
+      "runner": "src.finetune",
+      "input": "weights/EXLLM-v1.1-5m-fix1.pt",
+      "output": "weights/EXLLM-v1.1-5m-final.pt",
+      "output_sha256": "26fc9c588a30eba71eef062720a967337a155435dd02e2595a54b735f0178865",
+      "data": "data/v1_1_release_fix.jsonl",
+      "steps": 500,
+      "batch": 32,
+      "threads": 8,
+      "learning_rate": 0.00006
+    },
+    {
+      "name": "release",
+      "runner": "src.finetune",
+      "input": "weights/EXLLM-v1.1-5m-final.pt",
+      "output": "weights/EXLLM-v1.1-5m-release.pt",
+      "output_sha256": "35468acd4b962dc8fd64d7f6ae4bbf6d3245e03236d1b3562278251deed31204",
+      "data": "data/v1_1_release_fix.jsonl",
+      "steps": 250,
+      "batch": 32,
+      "threads": 8,
+      "learning_rate": 0.000025
+    },
+    {
+      "name": "release2",
+      "runner": "src.finetune",
+      "input": "weights/EXLLM-v1.1-5m-release.pt",
+      "output": "weights/EXLLM-v1.1-5m-release2.pt",
+      "output_sha256": "22e5c171bdb0cce094648d25c3768d0a0291797aa18d5ef833d812e6010a2d84",
+      "data": "data/v1_1_release_fix.jsonl",
+      "steps": 160,
+      "batch": 32,
+      "threads": 8,
+      "learning_rate": 0.000012
+    },
+    {
+      "name": "release3",
+      "runner": "src.finetune",
+      "input": "weights/EXLLM-v1.1-5m-release2.pt",
+      "output": "weights/EXLLM-v1.1-5m-release3.pt",
+      "output_sha256": "48ad00c6640689595a253fc949cad83f3000e14cccdf69275fcf245e85be3ceb",
+      "data": "data/v1_1_release_fix.jsonl",
+      "steps": 100,
+      "batch": 32,
+      "threads": 8,
+      "learning_rate": 0.000006
+    }
+  ],
+  "determinism_note": "Commands, seeds and inputs are preserved. Bit-for-bit identity can still vary with PyTorch, BLAS, CPU and platform; compare every output SHA-256 with this manifest."
+}

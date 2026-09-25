@@ -8,9 +8,11 @@
   "global_step": 1810,
   "lineage": {
     "project_origin": "random initialization",
-    "release_parent": "earlier in-project EXLLM checkpoint",
+    "release_parent": "weights/EXLLM-v1.0.0.safetensors",
+    "release_parent_sha256": "caad6a93aa2a8f6f2b525c4671dc8d2f8e4328d262a093172a55c672cd4e24c9",
     "expansion": "dimension-compatible parameter transplantation",
-    "external_pretrained_checkpoint": null
+    "external_pretrained_checkpoint": null,
+    "stage_manifest": "training/release-5m-stages.json"
   },
   "architecture": {
     "vocab_size": 868,

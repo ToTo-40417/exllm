@@ -36,6 +36,7 @@ GGUF companionは、電子辞書用checkpointの形式変換ではありませ�
 - 電子辞書版はint8重み・Q12活性・整数演算で推論
 - 短い日本語の挨拶、用語説明、簡単な質問向け
 - 学習データ、重み、コードは本プロジェクトで作成
+- v1.0親checkpointから5M release3までのstage manifestと再実行ツールを収録
 
 このモデルは汎用知識モデルではありません。未知の話題、長い指示、専門判断、最新情報には適しません。医療・法律・金融などの重要な判断には使用しないでください。
 
@@ -61,6 +62,8 @@ GGUF本体、SHA-256、詳細なモデルカード、学習manifestは[`ToTo-404
 開発背景と実機での動作は、Note記事「[高校生用の電子辞書でLLMを動かしてみた ―0.024GHz/0.016GB](https://note.com/joyful_beetle869/n/nbd1e26679b78)」で紹介しています。
 
 RTX 3060での40回warm-up後・120試行の生ログは[`benchmarks/rtx3060-cuda-robust-20260925.json`](benchmarks/rtx3060-cuda-robust-20260925.json)、学習・lineageの機械可読情報は[`training/release-5m.json`](training/release-5m.json)に収録しています。
+
+5Mモデルの直接の親、全stageの実行条件、各中間hashは[`training/RECIPE.md`](training/RECIPE.md)と[`training/release-5m-stages.json`](training/release-5m-stages.json)に記録しています。`python tools/replay_5m.py --dry-run`で実行列を確認できます。電子辞書用`model.q12`は`python tools/export_exq12.py`で公開EXLLM8から再生成でき、配布物と同じSHA-256になることを検証しています。形式は[`EXQ12_FORMAT.md`](EXQ12_FORMAT.md)を参照してください。
 
 ## ライセンス
 
@@ -93,6 +96,7 @@ Based on the supported scope of [`exword-template`](https://github.com/brain-hac
 - Integer device runtime using int8 weights and Q12 activations
 - Intended for short Japanese greetings, definitions, and simple questions
 - Project-generated training data, weights, and code
+- Stage manifest and replay tool from the v1.0 parent checkpoint through 5M release3
 
 This is not a general-purpose knowledge model. Do not rely on it for medical, legal, financial, current-information, or other high-stakes decisions.
 
@@ -116,5 +120,7 @@ Search for `ToTo-40417/EXLLM` in LM Studio and download `EXLLM-0.005B-LMStudio-F
 The Hugging Face repository is the canonical location for the GGUF binary, SHA-256 digest, full model card, and training manifest.
 
 The 40-warm-up/120-run RTX 3060 log is published as [`benchmarks/rtx3060-cuda-robust-20260925.json`](benchmarks/rtx3060-cuda-robust-20260925.json). Machine-readable training and lineage metadata is in [`training/release-5m.json`](training/release-5m.json).
+
+The direct 5M parent, complete stage parameters, and intermediate hashes are documented in [`training/RECIPE.md`](training/RECIPE.md) and [`training/release-5m-stages.json`](training/release-5m-stages.json). Inspect the replay with `python tools/replay_5m.py --dry-run`. Rebuild the EX-word `model.q12` deterministically from the published EXLLM8 artifact with `python tools/export_exq12.py`; see [`EXQ12_FORMAT.md`](EXQ12_FORMAT.md).
 
 Released under Apache License 2.0. See [`LICENSE`](LICENSE), [`NOTICE`](NOTICE), and [`DATA_PROVENANCE.md`](DATA_PROVENANCE.md).
