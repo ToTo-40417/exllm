@@ -13,6 +13,10 @@ tags: [japanese, tiny-language-model, edge-ai, ex-word]
 
 EXLLMは、CASIO EX-wordのような低資源端末で動かすためにゼロから学習した、約538万パラメータの小型日本語言語モデルです。XD-B4800上では、24.184 MHzの単一コアSH-4Aと整数推論ランタイムで実際に文章を生成します。
 
+## EX-word対応環境
+
+電子辞書版は、利用する[`exword-template`](https://github.com/brain-hackers/exword-template)とlibexwordの対応範囲から、DATAPLUS 5 / 6 / 7を理論上の対象としています。実機で起動・推論・ベンチマークを確認したのはXD-B4800（DATAPLUS 6）のみです。他機種での動作は保証せず、DATAPLUS 5 / 7およびそれ以外の世代は実機未確認です。
+
 ## 特徴
 
 - 6層、hidden 288、9 attention heads、context 128 tokens
@@ -46,6 +50,10 @@ RTX 3060での40回warm-up後・120試行の生ログは[`benchmarks/rtx3060-cud
 ## English
 
 EXLLM is a tiny Japanese language model trained from scratch for highly constrained devices such as CASIO EX-word electronic dictionaries. Its 5.38-million-parameter model generates text on an XD-B4800 using an integer runtime on a single-core 24.184 MHz SH-4A processor.
+
+### EX-word compatibility
+
+Based on the supported scope of [`exword-template`](https://github.com/brain-hackers/exword-template) and the libexword installation path, the device runtime theoretically targets DATAPLUS 5, 6, and 7. Boot, inference, and benchmark operation have been tested only on an XD-B4800 (DATAPLUS 6). Other models are not guaranteed; DATAPLUS 5, DATAPLUS 7, and all other generations remain untested on physical hardware.
 
 ### Highlights
 
