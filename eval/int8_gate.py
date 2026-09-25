@@ -7,7 +7,7 @@ from src.runtime import answer,try_calculate
 from src.infer import bad_text
 from eval.release_gate import CASES,valid_text
 
-def main(fuzz_n=80,out_name='int8_release_gate_result.json',bin_name='weights/EXLLM-v1.0.0-int8.bin',manifest_name='weights/EXLLM-v1.0.0-int8.manifest.json'):
+def main(fuzz_n=80,out_name='int8_release_gate_result.json',bin_name='weights/EXLLM-v1.1-5m-int8.bin',manifest_name='weights/EXLLM-v1.1-5m-int8.manifest.json'):
     torch.set_num_threads(8);t0=time.time();m,man=load_bin(ROOT/bin_name,ROOT/manifest_name);tok=HybridTokenizer.load(ROOT/'tokenizer.json')
     sem=[];okn=0
     for name,q,must,must_not in CASES:
@@ -32,4 +32,4 @@ def main(fuzz_n=80,out_name='int8_release_gate_result.json',bin_name='weights/EX
     (ROOT/'eval'/out_name).write_text(json.dumps(rep,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps({k:rep[k] for k in ['semantic','calculator','fuzz','sampling','release_pass','elapsed_sec']},ensure_ascii=False));raise SystemExit(0 if rep['release_pass'] else 2)
 if __name__=='__main__':
     import argparse
-    ap=argparse.ArgumentParser();ap.add_argument('--fuzz',type=int,default=80);ap.add_argument('--out',default='int8_release_gate_result.json');ap.add_argument('--bin',default='weights/EXLLM-v1.0.0-int8.bin');ap.add_argument('--manifest',default='weights/EXLLM-v1.0.0-int8.manifest.json');a=ap.parse_args();main(a.fuzz,a.out,a.bin,a.manifest)
+    ap=argparse.ArgumentParser();ap.add_argument('--fuzz',type=int,default=80);ap.add_argument('--out',default='int8_release_gate_result.json');ap.add_argument('--bin',default='weights/EXLLM-v1.1-5m-int8.bin');ap.add_argument('--manifest',default='weights/EXLLM-v1.1-5m-int8.manifest.json');a=ap.parse_args();main(a.fuzz,a.out,a.bin,a.manifest)

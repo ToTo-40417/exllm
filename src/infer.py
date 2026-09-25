@@ -4,7 +4,7 @@ import torch
 from .model import EXLLM,EXLLMConfig
 from .tokenizer import HybridTokenizer,UTF8State,normalize_text
 
-def load_model(ckpt='weights/EXLLM-v1.0-train.pt'):
+def load_model(ckpt='weights/EXLLM-v1.1-5m-release3.pt'):
     tok=HybridTokenizer.load('tokenizer.json'); c=torch.load(ckpt,map_location='cpu'); cfg=EXLLMConfig(**c['config']); m=EXLLM(cfg); m.load_state_dict(c['model']); m.eval(); return m,tok,c
 
 def bad_text(s):

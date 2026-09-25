@@ -9,7 +9,7 @@ MAGIC=b'EXLLM8\0\0'
 def quant_row(t):
     a=t.detach().float().cpu().numpy(); mx=np.max(np.abs(a),axis=1); sc=np.where(mx>0,mx/127.0,1.0).astype(np.float32); q=np.clip(np.rint(a/sc[:,None]),-127,127).astype(np.int8); return q,sc
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('--out',default='weights/EXLLM-v1.0.0-int8-reexport.bin'); ap.add_argument('--checkpoint',default=''); a=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument('--out',default='weights/EXLLM-v1.1-5m-int8-reexport.bin'); ap.add_argument('--checkpoint',default=''); a=ap.parse_args()
     if a.checkpoint:
         c=torch.load(ROOT/a.checkpoint,map_location='cpu',weights_only=False);m=EXLLM(EXLLMConfig(**c['config']));m.load_state_dict(c['model']);m.eval()
     else:m,tok=load_release_model(ROOT)

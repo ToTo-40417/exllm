@@ -22,5 +22,5 @@ def load_bin(path,manifest_path):
         if src in vals:sd[k]=vals[src]
     m.load_state_dict(sd);m.eval();return m,man
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--bin',default='weights/EXLLM-v1.0.0-int8.bin');ap.add_argument('--manifest',default='weights/EXLLM-v1.0.0-int8.manifest.json');ap.add_argument('--out',default='weights/EXLLM-v1.0.0-int8-dequant-test.pt');a=ap.parse_args();m,man=load_bin(ROOT/a.bin,ROOT/a.manifest);torch.save({'model':m.state_dict(),'config':m.cfg.__dict__,'meta':{'name':'EXLLM','developer':'ToTo','version':'1.0.0','quantized_source':a.bin}},ROOT/a.out);print(a.out)
+    ap=argparse.ArgumentParser();ap.add_argument('--bin',default='weights/EXLLM-v1.1-5m-int8.bin');ap.add_argument('--manifest',default='weights/EXLLM-v1.1-5m-int8.manifest.json');ap.add_argument('--out',default='weights/EXLLM-v1.1-5m-int8-dequant-test.pt');a=ap.parse_args();m,man=load_bin(ROOT/a.bin,ROOT/a.manifest);torch.save({'model':m.state_dict(),'config':m.cfg.__dict__,'meta':{'name':'EXLLM','developer':'ToTo','version':'1.1.0-5m','quantized_source':a.bin}},ROOT/a.out);print(a.out)
 if __name__=='__main__':main()

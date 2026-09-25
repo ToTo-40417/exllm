@@ -15,6 +15,11 @@ The development process was iterative:
 
 All corrective corpus generators are preserved as `src/make_recovery*.py`, and the generated JSONL files are included under `data/`.
 
+Some early-stage scripts retain `v1.0` in their default intermediate
+checkpoint names. Those names document the internal training lineage and are
+not current release artifacts. User-facing inference and evaluation tools
+default to the `v1.1-5m` files under `weights/`.
+
 A clean reference training starts with:
 
 ```bash

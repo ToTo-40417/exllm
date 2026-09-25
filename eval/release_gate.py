@@ -50,7 +50,7 @@ def main(fuzz_n=80,out=None):
         for q,must in scases:
             a=answer(m,tok,q,max_new=56,temperature=0.55,top_k=8); ok=valid_text(a) and (must is None or must in a); r={'seed':seed,'prompt':q,'answer':a,'pass':ok}; samp.append(r)
             if not ok:samp_fail.append(r)
-    rep={'model':'EXLLM-v1.0.0.safetensors','semantic':{'pass':sem_ok,'total':len(sem)},'calculator':{'pass':300-len(calc_fail),'total':300},'fuzz':{'pass':fuzz_n-len(fuzz_fail),'total':fuzz_n},'sampling':{'pass':len(samp)-len(samp_fail),'total':len(samp)},'release_pass':sem_ok==len(sem) and not calc_fail and not fuzz_fail and not samp_fail,'elapsed_sec':time.time()-t0,'semantic_cases':sem,'calculator_failures':calc_fail,'fuzz_failures':fuzz_fail,'sampling_cases':samp,'sampling_failures':samp_fail}
+    rep={'model':'EXLLM-v1.1-5m-release3.pt','semantic':{'pass':sem_ok,'total':len(sem)},'calculator':{'pass':300-len(calc_fail),'total':300},'fuzz':{'pass':fuzz_n-len(fuzz_fail),'total':fuzz_n},'sampling':{'pass':len(samp)-len(samp_fail),'total':len(samp)},'release_pass':sem_ok==len(sem) and not calc_fail and not fuzz_fail and not samp_fail,'elapsed_sec':time.time()-t0,'semantic_cases':sem,'calculator_failures':calc_fail,'fuzz_failures':fuzz_fail,'sampling_cases':samp,'sampling_failures':samp_fail}
     outp=Path(out) if out else ROOT/'eval'/'release_gate_result.json'; outp.write_text(json.dumps(rep,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({k:rep[k] for k in ['semantic','calculator','fuzz','sampling','release_pass','elapsed_sec']},ensure_ascii=False)); raise SystemExit(0 if rep['release_pass'] else 2)
 if __name__=='__main__':

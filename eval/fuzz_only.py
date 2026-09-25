@@ -15,5 +15,5 @@ def main():
     for i in range(a.n):
         q=''.join(rng.choice(alpha) for _ in range(rng.randint(1,36))); out=answer(m,tok,q,max_new=48,temperature=0.0)
         if not valid(out):fail.append({'i':i,'prompt':q,'answer':out})
-    rep={'model':'EXLLM-v1.0.0.safetensors','n':a.n,'seed':a.seed,'failures':len(fail),'elapsed_sec':time.time()-t0,'failure_cases':fail}; (ROOT/a.out).write_text(json.dumps(rep,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps({k:rep[k] for k in ['n','seed','failures','elapsed_sec']})); raise SystemExit(1 if fail else 0)
+    rep={'model':'EXLLM-v1.1-5m-release3.pt','n':a.n,'seed':a.seed,'failures':len(fail),'elapsed_sec':time.time()-t0,'failure_cases':fail}; (ROOT/a.out).write_text(json.dumps(rep,ensure_ascii=False,indent=2),encoding='utf-8'); print(json.dumps({k:rep[k] for k in ['n','seed','failures','elapsed_sec']})); raise SystemExit(1 if fail else 0)
 if __name__=='__main__':main()

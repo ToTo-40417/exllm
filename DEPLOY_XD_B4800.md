@@ -1,6 +1,14 @@
-# XD-B4800 Deployment Notes
+# XD-B4800 Deployment Notes (historical v1.0.0 plan)
 
-EXLLM v1.0.0 was shaped for the CASIO EX-word XD-B4800 / DATAPLUS 6 homebrew project, but the final C/SH4 runtime still has to be integrated and measured on the physical unit.
+> **Historical document:** This file records the planning assumptions before
+> the v1.0.0 device integration. The current v1.1.0 runtime has since been
+> integrated and measured on an XD-B4800. See
+> [`exllm-exword`](https://github.com/ToTo-40417/exllm-exword) for the current
+> device source, installation path, and benchmarks. Current release artifacts
+> and measured results are documented in [`README.md`](README.md) and on
+> [Hugging Face](https://huggingface.co/ToTo-40417/EXLLM).
+
+EXLLM v1.0.0 was shaped for the CASIO EX-word XD-B4800 / DATAPLUS 6 homebrew project. At the time represented by these notes, the final C/SH4 runtime had not yet been integrated or measured on the physical unit.
 
 ## Deployment weight footprint
 
@@ -55,4 +63,4 @@ The EXLLM8 interchange file stores per-row scales as float32. This is convenient
 7. integrate the EX-word UI;
 8. benchmark token latency and maximum resident memory on the actual XD-B4800.
 
-Do not assume the published model package alone proves device execution: it proves a size/compute target and reference behavior. Physical-device validation remains the final deployment step.
+At the v1.0.0 planning stage, the model package alone established only a size/compute target and reference behavior. Physical-device validation was the remaining deployment step; that validation was subsequently completed by the v1.1.0 `exllm-exword` runtime.

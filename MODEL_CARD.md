@@ -58,7 +58,7 @@ The EXLLM project originates from random initialization. The 5M release was expa
 
 ## Quantization
 
-`EXLLM-v1.0.0-int8.bin` uses symmetric int8 quantization per output row for 2D weight matrices. RMSNorm vectors are stored in fp16 because their footprint is negligible and preserving them reduces unnecessary quantization error. `lm_head.weight` is an alias of `tok.weight` and is not duplicated in the EXLLM8 file.
+`weights/EXLLM-v1.1-5m-int8.bin` uses symmetric int8 quantization per output row for 2D weight matrices. RMSNorm vectors are stored in fp16 because their footprint is negligible and preserving them reduces unnecessary quantization error. `lm_head.weight` is an alias of `tok.weight` and is not duplicated in the EXLLM8 file.
 
 The int8 package was dequantized back into the reference PyTorch model and passed the same project release gate as the fp32 candidate.
 
