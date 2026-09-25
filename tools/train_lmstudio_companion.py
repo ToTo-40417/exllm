@@ -178,7 +178,9 @@ def main():
     cfg = LlamaConfig(
         vocab_size=len(tokenizer), hidden_size=288, intermediate_size=608,
         num_hidden_layers=6, num_attention_heads=9, num_key_value_heads=9,
-        max_position_embeddings=128, rms_norm_eps=1e-5, hidden_act="silu",
+        # Training examples remain capped at 128 tokens.  The larger RoPE
+        # window leaves room for LM Studio's chat wrapper and short history.
+        max_position_embeddings=512, rms_norm_eps=1e-5, hidden_act="silu",
         attention_bias=False, mlp_bias=False, tie_word_embeddings=True,
         bos_token_id=tokenizer.bos_token_id, eos_token_id=tokenizer.eos_token_id,
         pad_token_id=tokenizer.pad_token_id,
@@ -238,7 +240,8 @@ def main():
             "intermediate_size": 608,
             "attention_heads": 9,
             "kv_heads": 9,
-            "context_length": 128,
+            "training_sequence_length": 128,
+            "runtime_context_length": 512,
             "vocabulary_size": len(tokenizer),
         },
         "training_records_including_overlaps": len(train_rows),
