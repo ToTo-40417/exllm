@@ -13,6 +13,15 @@ tags: [japanese, tiny-language-model, edge-ai, ex-word]
 
 EXLLMは、CASIO EX-wordのような低資源端末で動かすためにゼロから学習した、約538万パラメータの小型日本語言語モデルです。XD-B4800上では、24.184 MHzの単一コアSH-4Aと整数推論ランタイムで実際に文章を生成します。
 
+## 公開物の構成
+
+| 用途 | モデル | 実行環境 |
+|---|---|---|
+| 電子辞書・参照実行 | EXLLM独自checkpoint、0.005377824B parameters | EX-word用整数runtime / PyTorch参照runtime |
+| PCでの簡易実行 | 別途学習したLlama互換GGUF companion、0.005441184B parameters | LM Studio / llama.cpp |
+
+GGUF companionは、電子辞書用checkpointの形式変換ではありません。EXLLMのプロジェクトデータを使い、標準的なLlama構成で別途学習したPC向けのモデルです。両者の直接的な親子関係や重みの同一性はありません。
+
 ## EX-word対応環境
 
 電子辞書版は、利用する[`exword-template`](https://github.com/brain-hackers/exword-template)とlibexwordの対応範囲から、DATAPLUS 5 / 6 / 7を理論上の対象としています。実機で起動・推論・ベンチマークを確認したのはXD-B4800（DATAPLUS 6）のみです。他機種での動作は保証せず、DATAPLUS 5 / 7およびそれ以外の世代は実機未確認です。
@@ -39,7 +48,13 @@ python chat.py こんにちは
 
 標準checkpointは`weights/EXLLM-v1.1-5m-release3.pt`です。この独自アーキテクチャはLM Studioの標準llama.cpp backendで直接ロードできません。Hugging Faceでは、同じプロジェクトデータから別途学習したLlama互換GGUF companionを配布しています。作成スクリプトは[`tools/train_lmstudio_companion.py`](tools/train_lmstudio_companion.py)です。
 
-モデルカードと配布用重みは[`ToTo-40417/EXLLM`](https://huggingface.co/ToTo-40417/EXLLM)、電子辞書版、導入方法、実機ベンチマークは[`exllm-exword`](https://github.com/ToTo-40417/exllm-exword)を参照してください。関連ツールとして[`exword-hardware-dump`](https://github.com/ToTo-40417/exword-hardware-dump)と[`exword-gnuboy-save-importer`](https://github.com/ToTo-40417/exword-gnuboy-save-importer)があります。
+### LM Studioで使う
+
+LM Studioで`ToTo-40417/EXLLM`を検索し、`EXLLM-0.005B-LMStudio-F16.gguf`をダウンロードします。チャットtemplateはGGUFに内蔵しています。ロード時のcontext lengthは`512`に設定してください。学習時の系列長は128 tokensで、追加領域はLM Studioの制御情報と短い履歴のための余白です。
+
+GGUF本体、SHA-256、詳細なモデルカード、学習manifestは[`ToTo-40417/EXLLM`](https://huggingface.co/ToTo-40417/EXLLM)を正本とします。
+
+電子辞書版の導入方法と実機ベンチマークは[`exllm-exword`](https://github.com/ToTo-40417/exllm-exword)を参照してください。関連ツールとして[`exword-hardware-dump`](https://github.com/ToTo-40417/exword-hardware-dump)と[`exword-gnuboy-save-importer`](https://github.com/ToTo-40417/exword-gnuboy-save-importer)があります。
 
 RTX 3060での40回warm-up後・120試行の生ログは[`benchmarks/rtx3060-cuda-robust-20260925.json`](benchmarks/rtx3060-cuda-robust-20260925.json)、学習・lineageの機械可読情報は[`training/release-5m.json`](training/release-5m.json)に収録しています。
 
@@ -50,6 +65,15 @@ RTX 3060での40回warm-up後・120試行の生ログは[`benchmarks/rtx3060-cud
 ## English
 
 EXLLM is a tiny Japanese language model trained from scratch for highly constrained devices such as CASIO EX-word electronic dictionaries. Its 5.38-million-parameter model generates text on an XD-B4800 using an integer runtime on a single-core 24.184 MHz SH-4A processor.
+
+### Published model variants
+
+| Purpose | Model | Runtime |
+|---|---|---|
+| Embedded and reference inference | Custom EXLLM checkpoint, 0.005377824B parameters | EX-word integer runtime / PyTorch reference runtime |
+| Convenient PC inference | Separately trained Llama-compatible GGUF companion, 0.005441184B parameters | LM Studio / llama.cpp |
+
+The GGUF companion is not a format conversion of the embedded checkpoint. It is a separate PC-oriented model trained with the EXLLM project data using a standard Llama-compatible architecture. The two releases do not share identical weights or a direct checkpoint lineage.
 
 ### EX-word compatibility
 
@@ -75,7 +99,13 @@ pip install -r requirements.txt
 python chat.py こんにちは
 ```
 
-The default checkpoint is `weights/EXLLM-v1.1-5m-release3.pt`. Standard LM Studio llama.cpp backends cannot load this custom architecture directly. Hugging Face therefore provides a separately trained, Llama-compatible GGUF companion built from the same project data; it is not a conversion of the embedded weights. Its training script is [`tools/train_lmstudio_companion.py`](tools/train_lmstudio_companion.py). The model card and release weights are available at [`ToTo-40417/EXLLM`](https://huggingface.co/ToTo-40417/EXLLM). See [`exllm-exword`](https://github.com/ToTo-40417/exllm-exword) for the device runtime and benchmarks, plus [`exword-hardware-dump`](https://github.com/ToTo-40417/exword-hardware-dump) and [`exword-gnuboy-save-importer`](https://github.com/ToTo-40417/exword-gnuboy-save-importer) for related tools.
+The default checkpoint is `weights/EXLLM-v1.1-5m-release3.pt`. Standard LM Studio llama.cpp backends cannot load this custom architecture directly. Hugging Face therefore provides a separately trained, Llama-compatible GGUF companion built from the same project data; it is not a conversion of the embedded weights. Its training script is [`tools/train_lmstudio_companion.py`](tools/train_lmstudio_companion.py). See [`exllm-exword`](https://github.com/ToTo-40417/exllm-exword) for the device runtime and benchmarks, plus [`exword-hardware-dump`](https://github.com/ToTo-40417/exword-hardware-dump) and [`exword-gnuboy-save-importer`](https://github.com/ToTo-40417/exword-gnuboy-save-importer) for related tools.
+
+### LM Studio
+
+Search for `ToTo-40417/EXLLM` in LM Studio and download `EXLLM-0.005B-LMStudio-F16.gguf`. The chat template is embedded in the file. Set the loaded context length to `512`. Training sequences were limited to 128 tokens; the additional runtime window is reserved for LM Studio framing and short chat history.
+
+The Hugging Face repository is the canonical location for the GGUF binary, SHA-256 digest, full model card, and training manifest.
 
 The 40-warm-up/120-run RTX 3060 log is published as [`benchmarks/rtx3060-cuda-robust-20260925.json`](benchmarks/rtx3060-cuda-robust-20260925.json). Machine-readable training and lineage metadata is in [`training/release-5m.json`](training/release-5m.json).
 
