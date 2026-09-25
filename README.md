@@ -4,7 +4,7 @@ language:
   - ja
 library_name: pytorch
 pipeline_tag: text-generation
-tags: [japanese, tiny-language-model, edge-ai, ex-word]
+tags: [japanese, little-language-model, tiny-language-model, edge-ai, ex-word]
 ---
 
 # EXLLM 5M
@@ -12,6 +12,8 @@ tags: [japanese, tiny-language-model, edge-ai, ex-word]
 日本語 | [English](#english)
 
 EXLLMは、CASIO EX-wordのような低資源端末で動かすためにゼロから学習した、約538万パラメータの小型日本語言語モデルです。XD-B4800上では、24.184 MHzの単一コアSH-4Aと整数推論ランタイムで実際に文章を生成します。
+
+ここでのLLMは、Little Language Modelです。
 
 ## 公開物の構成
 
@@ -65,6 +67,8 @@ RTX 3060での40回warm-up後・120試行の生ログは[`benchmarks/rtx3060-cud
 ## English
 
 EXLLM is a tiny Japanese language model trained from scratch for highly constrained devices such as CASIO EX-word electronic dictionaries. Its 5.38-million-parameter model generates text on an XD-B4800 using an integer runtime on a single-core 24.184 MHz SH-4A processor.
+
+Here, LLM stands for Little Language Model.
 
 ### Published model variants
 
