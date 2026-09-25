@@ -13,7 +13,7 @@ tags: [japanese, little-language-model, tiny-language-model, edge-ai, ex-word]
 
 EXLLMは、CASIO EX-wordのような低資源端末で動かすためにゼロから学習した、約538万パラメータの小型日本語言語モデルです。XD-B4800上では、24.184 MHzの単一コアSH-4Aと整数推論ランタイムで実際に文章を生成します。
 
-ここでのLLMは、Little Language Modelです。
+LLMとは、Little Language Modelの略です。
 
 ## 公開物の構成
 
