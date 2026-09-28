@@ -22,7 +22,7 @@
 | Tokenizer | frequent-character + UTF-8 byte fallback, NFC |
 | Position encoding | learned position embedding |
 | Output head | tied to token embedding |
-| Primary target | CASIO EX-word XD-B4800 / DATAPLUS 6 class device |
+| Verified embedded targets | CASIO EX-word XD-B4800 / DATAPLUS 6; XD-N6500 / DATAPLUS 7 |
 | License | Apache-2.0 |
 
 The tied language-model head is the same parameter as the token embedding. State-dict tensor element totals can therefore look larger if a serializer lists both names. The unique parameter count is **5,377,824**.
