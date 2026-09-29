@@ -41,3 +41,10 @@ The project-generated data in this release is distributed under Apache-2.0 toget
 ## Important limitation
 
 Project-generated definitions and factual examples are small and curated for product behavior; they are not a comprehensive knowledge corpus. Inclusion of a statement in the training files is not a guarantee that it is universally correct or current.
+
+## Objective-specific models
+
+Models that share the EXLLM architecture but use a different objective or dataset have their own provenance records. They must not inherit the claims above merely because they use the same runtime or tokenizer.
+
+- EXLLM-JPTOEN case-study data and release boundary: [`docs/EXLLM_JPTOEN_DATA_PROVENANCE.md`](docs/EXLLM_JPTOEN_DATA_PROVENANCE.md)
+- EXLLM-JPTOEN machine-readable lineage and hashes: [`training/exllm-jptoen-case-study.json`](training/exllm-jptoen-case-study.json)

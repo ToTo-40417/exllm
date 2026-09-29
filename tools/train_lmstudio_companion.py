@@ -8,6 +8,7 @@ the EXLLM project data.  It is not a format conversion of the EX-word weights.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import random
@@ -154,6 +155,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-dir", type=Path, default=Path("data"))
     parser.add_argument("--out", type=Path, default=Path("artifacts/EXLLM-0.005B-LMStudio"))
+    parser.add_argument("--name", default="EXLLM-0.005B-LMStudio-GGUF-companion")
+    parser.add_argument("--train-files", nargs="*", type=Path)
+    parser.add_argument("--valid-file", type=Path)
     parser.add_argument("--epochs", type=int, default=5)
     parser.add_argument("--batch", type=int, default=128)
     parser.add_argument("--lr", type=float, default=5e-4)
@@ -164,8 +168,10 @@ def main():
     torch.manual_seed(args.seed)
     random.seed(args.seed)
     args.out.mkdir(parents=True, exist_ok=True)
-    train_paths = sorted(p for p in args.data_dir.glob("*.jsonl") if p.name != "valid.jsonl")
-    valid_path = args.data_dir / "valid.jsonl"
+    train_paths = args.train_files or sorted(p for p in args.data_dir.glob("*.jsonl") if p.name != "valid.jsonl")
+    valid_path = args.valid_file or (args.data_dir / "valid.jsonl")
+    if not train_paths or not valid_path.is_file():
+        raise RuntimeError("training or validation data is missing")
     tokenizer = train_tokenizer(train_paths, args.out, args.vocab_size)
     train_rows = list(records(train_paths))
     valid_rows = list(records([valid_path]))
@@ -230,7 +236,7 @@ def main():
             tokenizer.save_pretrained(args.out)
 
     manifest = {
-        "name": "EXLLM-0.005B-LMStudio-GGUF-companion",
+        "name": args.name,
         "relationship": "separately trained Llama-compatible companion; not converted EX-word weights",
         "parameters": sum(p.numel() for p in model.parameters()),
         "architecture": {
@@ -246,6 +252,20 @@ def main():
         },
         "training_records_including_overlaps": len(train_rows),
         "validation_records": len(valid_rows),
+        "training_files": [
+            {
+                "path": str(path),
+                "bytes": path.stat().st_size,
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            }
+            for path in train_paths
+        ],
+        "validation_file": {
+            "path": str(valid_path),
+            "bytes": valid_path.stat().st_size,
+            "sha256": hashlib.sha256(valid_path.read_bytes()).hexdigest(),
+        },
+        "processed_sequence_tokens": sum(len(item[0]) for item in train_set) * args.epochs,
         "epochs": args.epochs, "steps": steps, "best_validation_loss": best,
         "seed": args.seed, "history": history,
     }

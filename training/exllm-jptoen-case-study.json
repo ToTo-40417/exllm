@@ -1,0 +1,117 @@
+{
+  "schema": "exllm-case-study-v1",
+  "public_model_name": "EXLLM-JPTOEN",
+  "naming": {
+    "base_generation": 1,
+    "purpose": "JPTOEN",
+    "purpose_variant_generation": 1,
+    "omitted_default_numbers": [1]
+  },
+  "status": "publication-preparation; weights are not released here",
+  "architecture": {
+    "unique_parameters": 5377824,
+    "layers": 6,
+    "d_model": 288,
+    "d_ff": 896,
+    "heads": 9,
+    "vocabulary": 868,
+    "context_tokens": 128,
+    "exq12_tensors": 39,
+    "exq12_bytes": 5443105
+  },
+  "tokenizer": {
+    "sha256": "4c2a583b554e8165936cb3b11727f79d2ede43b73d416a48681f8d38385f5964"
+  },
+  "checkpoints": {
+    "legacy_unpublished_parent": {
+      "public_name": null,
+      "published": false,
+      "processed_nonpadding_tokens": 2901546,
+      "fp32_sha256": "7aa1b7227776a313171fead432ae7c6740ae95627362d783d560b64754a10685",
+      "int8_sha256": "8b909e6133c01ffc457252c5d0347ce617cedfa2a0eafe372069908ea282fd1a",
+      "exq12_sha256": "e38732f53e2b6c4ba70c72430a7d08d89a1ecc1f624ddffc5eb114723c80fc88",
+      "int8_evaluation_sha256": "c4d19751556ef9b90955cb4147930245f32357ba156efd867c8406bebe703f46",
+      "int8_evaluation": {
+        "canonical": {"pass": 245, "total": 266},
+        "bare_known": {"pass": 244, "total": 266},
+        "heldout_prompt": {"pass": 149, "total": 266},
+        "real_unknown": {"pass": 38, "total": 43},
+        "ambiguous_unknown": {"pass": 12, "total": 12},
+        "ood": {"pass": 11, "total": 11},
+        "device_regression": {"pass": 6, "total": 6}
+      }
+    },
+    "exllm_jptoen": {
+      "public_name": "EXLLM-JPTOEN",
+      "parent_fp32_sha256": "7aa1b7227776a313171fead432ae7c6740ae95627362d783d560b64754a10685",
+      "processed_nonpadding_tokens": 100003620,
+      "continuation_nonpadding_tokens": 97102074,
+      "steps": 11488,
+      "seed": 40417001,
+      "fp32_sha256": "942ec9f1610a5566585a7597a1bac67b4128814532669dffc334c6629bd21fe1",
+      "int8_sha256": "6f0d77b498e5e9f3bda8480832b6afdc66306205ab4fbdae2911203f935a0675",
+      "exq12_sha256": "ea5b59785e00b2a28b3c4eaa1e24785238f64ba3d45e300da7510aabf5d284eb",
+      "int8_evaluation_sha256": "6e17b59b2d51cb63ca6d8bc2801418025f571ba258f04b80f2f7c407939b32b9",
+      "training_log_sha256": "aef4f92cd10e5c0452b5a59038a655e9343565ad3db051772497c2049b00617c",
+      "training_script_sha256": "a1820a52e6f6181377d01b0b7777a674dcba3002fc7e37e3c6267704f73f6f5c",
+      "int8_evaluation": {
+        "bare_known": {"pass": 266, "total": 266},
+        "known_query": {"pass": 262, "total": 266},
+        "heldout_template": {"pass": 34, "total": 266},
+        "real_unknown_holdout": {"pass": 22, "total": 40},
+        "ambiguous_unknown": {"pass": 12, "total": 12},
+        "nonce_unknown": {"pass": 62, "total": 64},
+        "general_ood": {"pass": 5, "total": 5},
+        "device_regression": {"pass": 6, "total": 6},
+        "visible_ascii": {"pass": 925, "total": 925}
+      }
+    }
+  },
+  "token_counting": {
+    "unit": "non-padding input tokens",
+    "implementation": "For every training batch, actual = (X != PAD).sum(); global count is parent processed_nonpadding_tokens plus actual.",
+    "includes_repetition": true,
+    "is_unique_corpus_size": false,
+    "overshoot_reason": "The last complete batch is counted, so the 100,000,000 target ends at 100,003,620."
+  },
+  "data": {
+    "release_lexicon": {
+      "rows": 266,
+      "sha256": "0f1e12c83434d977f8ea8528d8ee46c6864010132ff797047fdb98ff15e982a1"
+    },
+    "ambiguous_kana": {
+      "rows": 12,
+      "sha256": "e078b25f9c265c556cbb5fe0d93237c63bb9805440d492a3c132024b9839727b"
+    },
+    "real_unknown_train": {
+      "rows": 80,
+      "sha256": "1a23ca04f46a31b63e1b245c3fc2e421427acedce242a393923d8d2c4a01ccd7"
+    },
+    "real_unknown_holdout": {
+      "rows": 40,
+      "sha256": "39514a3133ba04fb72392ad940f58fcf7775b3559ba3b46e9980f00702f678a1",
+      "used_for_training": false
+    },
+    "generation": {
+      "description": "Project-authored lexical rows and prompt templates, prepared by the project owner with generative-AI assistance; deterministic sampling generated repeated and template-derived training examples at runtime.",
+      "external_corpus_imported": false,
+      "row_level_external_attribution": null
+    },
+    "continuation_mix": {
+      "known_bare": 0.15,
+      "known_query": 0.50,
+      "known_noise": 0.10,
+      "real_unknown": 0.11,
+      "ambiguous_unknown": 0.05,
+      "nonce_unknown": 0.05,
+      "general": 0.04
+    }
+  },
+  "limitations": [
+    "Single architecture, single continuation seed, and task-specific data do not establish a general scaling law.",
+    "The original EXLLM model and EXLLM-JPTOEN optimize different tasks and must not be ranked by unlike evaluation suites.",
+    "Only exact shared cases are used to compare EXLLM-JPTOEN with its unpublished parent.",
+    "The 100M count is processed training tokens with heavy repetition and template derivation, not 100M unique corpus tokens.",
+    "Host greedy evaluation and physical-device behavior are separate evidence sources."
+  ]
+}

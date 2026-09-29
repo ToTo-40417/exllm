@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 .DS_Store
 weights/*dequant-test*
+training/general-ja-5m/work/

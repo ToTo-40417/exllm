@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "experiment_id": "general-ja-5m-v1",
+  "status": "halted-after-pipeline-validation",
+  "objective": "Broaden short Japanese question coverage while preserving the current EX-word runtime envelope.",
+  "lineage": {
+    "parent": "weights/EXLLM-v1.1-5m-release3.pt",
+    "parent_sha256": "48ad00c6640689595a253fc949cad83f3000e14cccdf69275fcf245e85be3ceb",
+    "external_pretrained_checkpoint": false
+  },
+  "runtime_contract": {
+    "config": "config-v1.1-5m.json",
+    "config_sha256": "a486623b8b1ffe187b6ac7b7b65ea81ed0a7e0333da4ea80d6a434fdc15efd26",
+    "tokenizer": "tokenizer.json",
+    "tokenizer_sha256": "4c2a583b554e8165936cb3b11727f79d2ede43b73d416a48681f8d38385f5964",
+    "trainable_parameters": 5377824,
+    "artifact_bytes_exq12_reference": 5443105,
+    "context_tokens": 128,
+    "required_exports": [
+      "EXLLM8",
+      "EXQ12"
+    ],
+    "device_input": {
+      "primary_script": "hiragana",
+      "secondary_mode": "ASCII",
+      "kanji_conversion_available": false,
+      "prompt_policy": "Device-facing alignment and evaluation use deterministic kana readings; answers remain natural kanji-kana mixed Japanese.",
+      "ime_requirement": "deferred"
+    }
+  },
+  "corpus": {
+    "train": [
+      "data/train.jsonl",
+      "data/mix.jsonl",
+      "data/hard.jsonl",
+      "data/robust.jsonl",
+      "data/recovery.jsonl",
+      "data/recovery2.jsonl",
+      "data/recovery3.jsonl",
+      "data/recovery4.jsonl",
+      "data/final_anchor.jsonl",
+      "data/final_balance.jsonl",
+      "data/final_consistent.jsonl",
+      "data/v1_1_release_fix.jsonl"
+    ],
+    "validation": [
+      "training/general-ja-5m/validation.jsonl"
+    ],
+    "new_records": [],
+    "provenance_policy": "Project-owned or redistribution-compatible records only; document source and license before inclusion."
+  },
+  "candidate": {
+    "output_directory": "training/general-ja-5m/work",
+    "checkpoint": "training/general-ja-5m/work/general-ja-5m-v1.pt",
+    "seed": 20260929,
+    "training_schedule": "Production: exactly 100M packed causal-language tokens, followed by exactly three epochs over one deterministic canonical answer for each distinct legacy prompt.",
+    "target_processed_token_ceiling": 100000000,
+    "processed_tokens_per_trainable_parameter_at_ceiling": 18.594881,
+    "required_token_counters": ["processed_tokens", "loss_bearing_tokens", "padding_tokens", "truncated_tokens"],
+    "inspection_milestones_processed_tokens": [5000000, 20000000, 50000000, 100000000],
+    "canonical_alignment_unique_prompts": 11396,
+    "canonical_alignment_epochs": 3,
+    "maximum_planned_exposures_per_distinct_alignment_record": 3,
+    "raw_language_learning_rate": 0.00008,
+    "canonical_alignment_learning_rate": 0.00002,
+    "architecture_change": false
+  },
+  "execution": {
+    "environment_authoring_host": "E130 / ai-node-builder",
+    "training_host": "local AI server",
+    "preferred_accelerator": "NVIDIA RTX 3060 / CUDA",
+    "comparison_accelerator": "AMD Radeon RX 9060 XT / ROCm when framework support is verified",
+    "source_transfer": "E130 prepares a hash-checked snapshot; the training host returns completed artifacts only."
+  },
+  "acceptance": {
+    "existing_release_gate_must_pass": true,
+    "no_train_validation_prompt_overlap": true,
+    "concept_and_source_group_split_required_for_new_data": true,
+    "evaluation_transform_family_must_differ_from_training": true,
+    "device_realistic_kana_suite_required": true,
+    "kanji_prompt_result_is_not_device_evidence_without_kana_equivalent": true,
+    "device_targets": [
+      "CASIO XD-B4800 / DATAPLUS 6",
+      "CASIO XD-N6500 / DATAPLUS 7"
+    ]
+  },
+  "outcome": {
+    "decision": "candidate-rejected-no-further-training",
+    "reason": "The end-to-end generation and training pipeline succeeded, but the release gate failed and the alignment data assumed written Japanese with kanji rather than the kana-first EX-word input contract.",
+    "raw_language": {
+      "processed_tokens": 100007936,
+      "loss_bearing_tokens": 100007936,
+      "steps": 6104,
+      "validation_loss": 2.8393710708618163,
+      "elapsed_seconds": 489.43395805358887
+    },
+    "canonical_alignment": {
+      "processed_tokens": 2116392,
+      "loss_bearing_tokens": 756156,
+      "steps": 270,
+      "elapsed_seconds": 12.709948778152466
+    },
+    "release_gate": {
+      "semantic_pass": 8,
+      "semantic_total": 35,
+      "fuzz_pass": 200,
+      "fuzz_total": 200,
+      "accepted": false
+    },
+    "server_process_state": "No matching training process was active when stop was requested; completed checkpoints and logs were retained."
+  }
+}

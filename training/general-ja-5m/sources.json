@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "policy": "Only enabled sources may enter a packed corpus. Exact versions, retrieval dates, hashes, attribution, and transformation history are required.",
+  "sources": [
+    {
+      "id": "exllm-project-records",
+      "status": "enabled",
+      "role": "lineage and final answer alignment",
+      "upstream_url": "https://github.com/ToTo-40417/exllm",
+      "license_url": "https://github.com/ToTo-40417/exllm/blob/main/LICENSE",
+      "revision": "Pinned per experiment manifest and per-file SHA-256",
+      "license": "project-owned",
+      "redistribution": "allowed",
+      "notes": "Existing JSONL records; duplicates and conflicting answers must be measured and must not be counted as distinct coverage."
+    },
+    {
+      "id": "exllm-authored-transformations",
+      "status": "enabled",
+      "role": "grammar, paraphrase, denoising, intent and composition",
+      "upstream_url": "https://github.com/ToTo-40417/exllm",
+      "license_url": "https://github.com/ToTo-40417/exllm/blob/main/LICENSE",
+      "revision": "Generator source revision, seed and output SHA-256 required",
+      "license": "project-owned",
+      "redistribution": "allowed",
+      "notes": "Deterministic generators and their seeds must be retained. Generated variants are deduplicated after tokenization."
+    },
+    {
+      "id": "aozora-public-domain-only",
+      "status": "enabled-filtered",
+      "role": "varied Japanese prose",
+      "upstream_url": "https://www.aozora.gr.jp/",
+      "license_url": "https://www.aozora.gr.jp/guide/kijyunn.html",
+      "revision": "Index retrieval timestamp plus source archive SHA-256 required",
+      "attribution": "Preserve work title, author, translator (when present), work ID and source URL",
+      "license": "work-specific public-domain status",
+      "redistribution": "only works whose author and translator rights are confirmed expired",
+      "notes": "Aozora Bunko permits free reuse of rights-expired works. Do not ingest the collection indiscriminately: filter out rights-active authors and translators, and preserve work, author, translator, source-file and transformation metadata."
+    },
+    {
+      "id": "wikidata-structured-data",
+      "status": "enabled-bounded",
+      "role": "atomic facts and compositional question generation",
+      "upstream_url": "https://www.wikidata.org/",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "revision": "Query/export text, retrieval timestamp, entity/property IDs and output SHA-256 required",
+      "license": "CC0 structured data",
+      "redistribution": "allowed",
+      "notes": "Use bounded exports or rate-limited access rather than a full 130+ GiB dump. Preserve entity and property IDs and retrieval metadata."
+    },
+    {
+      "id": "wikimedia-japanese",
+      "status": "disabled-pending-license-plan",
+      "role": "encyclopedic and dictionary text",
+      "license": "CC BY-SA / project-specific terms",
+      "redistribution": "not approved for this experiment yet",
+      "notes": "Requires an attribution and share-alike compliance decision before download or training."
+    },
+    {
+      "id": "bccwj",
+      "status": "disabled",
+      "role": "none",
+      "license": "licensed corpus with edition-specific restrictions",
+      "redistribution": "not approved",
+      "notes": "Excluded unless a separate license review and authorization is completed."
+    },
+    {
+      "id": "generic-web-crawl",
+      "status": "disabled",
+      "role": "none",
+      "license": "unclear",
+      "redistribution": "not approved",
+      "notes": "Not used merely to reach the token target."
+    }
+  ]
+}

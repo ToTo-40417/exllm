@@ -1,0 +1,3348 @@
+{
+  "inputs": {
+    "exllm_jptoen": {
+      "sha256": "6e17b59b2d51cb63ca6d8bc2801418025f571ba258f04b80f2f7c407939b32b9"
+    },
+    "legacy_parent": {
+      "published": false,
+      "sha256": "c4d19751556ef9b90955cb4147930245f32357ba156efd867c8406bebe703f46"
+    }
+  },
+  "limitations": [
+    "Only exact prompt/expected intersections are comparable.",
+    "Held-out-template and real-unknown suites have no exact common cases and are intentionally excluded.",
+    "The two evaluations were produced at different development stages."
+  ],
+  "method": "post-hoc exact intersection of prompt and expected answer; no inference was rerun",
+  "schema": "exllm-jptoen-common-eval-v1",
+  "suites": {
+    "ambiguous_unknown": {
+      "cases": [
+        {
+          "exllm_jptoen": {
+            "got": "unknown",
+            "pass": true
+          },
+          "expected": "unknown",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": true
+          },
+          "prompt": "かがくをえいごでいうと？"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "unknown",
+            "pass": true
+          },
+          "expected": "unknown",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": true
+          },
+          "prompt": "こうえんをえいごでいうと？"
+        }
+      ],
+      "exllm_jptoen_pass": 2,
+      "legacy_parent_pass": 2,
+      "total": 2
+    },
+    "bare_known": {
+      "cases": [
+        {
+          "exllm_jptoen": {
+            "got": "bright",
+            "pass": true
+          },
+          "expected": "bright",
+          "legacy_parent": {
+            "got": "bright",
+            "pass": true
+          },
+          "prompt": "あかるい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "autumn",
+            "pass": true
+          },
+          "expected": "autumn",
+          "legacy_parent": {
+            "got": "snake",
+            "pass": false
+          },
+          "prompt": "あき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "open",
+            "pass": true
+          },
+          "expected": "open",
+          "legacy_parent": {
+            "got": "open",
+            "pass": true
+          },
+          "prompt": "あける"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "morning",
+            "pass": true
+          },
+          "expected": "morning",
+          "legacy_parent": {
+            "got": "morning",
+            "pass": true
+          },
+          "prompt": "あさ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "breakfast",
+            "pass": true
+          },
+          "expected": "breakfast",
+          "legacy_parent": {
+            "got": "breakfast",
+            "pass": true
+          },
+          "prompt": "あさごはん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "leg",
+            "pass": true
+          },
+          "expected": "leg",
+          "legacy_parent": {
+            "got": "leg",
+            "pass": true
+          },
+          "prompt": "あし"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "tomorrow",
+            "pass": true
+          },
+          "expected": "tomorrow",
+          "legacy_parent": {
+            "got": "tomorrow",
+            "pass": true
+          },
+          "prompt": "あした"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "head",
+            "pass": true
+          },
+          "expected": "head",
+          "legacy_parent": {
+            "got": "homorse",
+            "pass": false
+          },
+          "prompt": "あたま"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "new",
+            "pass": true
+          },
+          "expected": "new",
+          "legacy_parent": {
+            "got": "new",
+            "pass": true
+          },
+          "prompt": "あたらしい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "hot",
+            "pass": true
+          },
+          "expected": "hot",
+          "legacy_parent": {
+            "got": "hot",
+            "pass": true
+          },
+          "prompt": "あつい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "ant",
+            "pass": true
+          },
+          "expected": "ant",
+          "legacy_parent": {
+            "got": "ant",
+            "pass": true
+          },
+          "prompt": "あり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "thank you",
+            "pass": true
+          },
+          "expected": "thank you",
+          "legacy_parent": {
+            "got": "thank you",
+            "pass": true
+          },
+          "prompt": "ありがとう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "walk",
+            "pass": true
+          },
+          "expected": "walk",
+          "legacy_parent": {
+            "got": "walk",
+            "pass": true
+          },
+          "prompt": "あるく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "encryption",
+            "pass": true
+          },
+          "expected": "encryption",
+          "legacy_parent": {
+            "got": "encryption",
+            "pass": true
+          },
+          "prompt": "あんごうか"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "no",
+            "pass": true
+          },
+          "expected": "no",
+          "legacy_parent": {
+            "got": "no",
+            "pass": true
+          },
+          "prompt": "いいえ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "house",
+            "pass": true
+          },
+          "expected": "house",
+          "legacy_parent": {
+            "got": "house",
+            "pass": true
+          },
+          "prompt": "いえ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "chair",
+            "pass": true
+          },
+          "expected": "chair",
+          "legacy_parent": {
+            "got": "chair",
+            "pass": true
+          },
+          "prompt": "いす"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "strawberry",
+            "pass": true
+          },
+          "expected": "strawberry",
+          "legacy_parent": {
+            "got": "strawberry",
+            "pass": true
+          },
+          "prompt": "いちご"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "dog",
+            "pass": true
+          },
+          "expected": "dog",
+          "legacy_parent": {
+            "got": "unk",
+            "pass": false
+          },
+          "prompt": "いぬ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "now",
+            "pass": true
+          },
+          "expected": "now",
+          "legacy_parent": {
+            "got": "now",
+            "pass": true
+          },
+          "prompt": "いま"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "meaning",
+            "pass": true
+          },
+          "expected": "meaning",
+          "legacy_parent": {
+            "got": "meaning",
+            "pass": true
+          },
+          "prompt": "いみ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "internet",
+            "pass": true
+          },
+          "expected": "internet",
+          "legacy_parent": {
+            "got": "internet",
+            "pass": true
+          },
+          "prompt": "いんたーねっと"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "rabbit",
+            "pass": true
+          },
+          "expected": "rabbit",
+          "legacy_parent": {
+            "got": "rabbit",
+            "pass": true
+          },
+          "prompt": "うさぎ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "cow",
+            "pass": true
+          },
+          "expected": "cow",
+          "legacy_parent": {
+            "got": "cow",
+            "pass": true
+          },
+          "prompt": "うし"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "universe",
+            "pass": true
+          },
+          "expected": "universe",
+          "legacy_parent": {
+            "got": "universe",
+            "pass": true
+          },
+          "prompt": "うちゅう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "arm",
+            "pass": true
+          },
+          "expected": "arm",
+          "legacy_parent": {
+            "got": "arm",
+            "pass": true
+          },
+          "prompt": "うで"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "horse",
+            "pass": true
+          },
+          "expected": "horse",
+          "legacy_parent": {
+            "got": "horse",
+            "pass": true
+          },
+          "prompt": "うま"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sea",
+            "pass": true
+          },
+          "expected": "sea",
+          "legacy_parent": {
+            "got": "see",
+            "pass": false
+          },
+          "prompt": "うみ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sell",
+            "pass": true
+          },
+          "expected": "sell",
+          "legacy_parent": {
+            "got": "sell",
+            "pass": true
+          },
+          "prompt": "うる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "happy",
+            "pass": true
+          },
+          "expected": "happy",
+          "legacy_parent": {
+            "got": "happy",
+            "pass": true
+          },
+          "prompt": "うれしい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "air conditioner",
+            "pass": true
+          },
+          "expected": "air conditioner",
+          "legacy_parent": {
+            "got": "air conditioner",
+            "pass": true
+          },
+          "prompt": "えあこん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "station",
+            "pass": true
+          },
+          "expected": "station",
+          "legacy_parent": {
+            "got": "station",
+            "pass": true
+          },
+          "prompt": "えき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "pencil",
+            "pass": true
+          },
+          "expected": "pencil",
+          "legacy_parent": {
+            "got": "pencil",
+            "pass": true
+          },
+          "prompt": "えんぴつ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "wolf",
+            "pass": true
+          },
+          "expected": "wolf",
+          "legacy_parent": {
+            "got": "wolf",
+            "pass": true
+          },
+          "prompt": "おおかみ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "big",
+            "pass": true
+          },
+          "expected": "big",
+          "legacy_parent": {
+            "got": "big",
+            "pass": true
+          },
+          "prompt": "おおきい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "wake up",
+            "pass": true
+          },
+          "expected": "wake up",
+          "legacy_parent": {
+            "got": "wake up",
+            "pass": true
+          },
+          "prompt": "おきる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "teach",
+            "pass": true
+          },
+          "expected": "teach",
+          "legacy_parent": {
+            "got": "teach",
+            "pass": true
+          },
+          "prompt": "おしえる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "slow",
+            "pass": true
+          },
+          "expected": "slow",
+          "legacy_parent": {
+            "got": "slow",
+            "pass": true
+          },
+          "prompt": "おそい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "tea",
+            "pass": true
+          },
+          "expected": "tea",
+          "legacy_parent": {
+            "got": "tea",
+            "pass": true
+          },
+          "prompt": "おちゃ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sound",
+            "pass": true
+          },
+          "expected": "sound",
+          "legacy_parent": {
+            "got": "sound",
+            "pass": true
+          },
+          "prompt": "おと"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "stomach",
+            "pass": true
+          },
+          "expected": "stomach",
+          "legacy_parent": {
+            "got": "stomach",
+            "pass": true
+          },
+          "prompt": "おなか"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "please",
+            "pass": true
+          },
+          "expected": "please",
+          "legacy_parent": {
+            "got": "please",
+            "pass": true
+          },
+          "prompt": "おねがいします"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "good morning",
+            "pass": true
+          },
+          "expected": "good morning",
+          "legacy_parent": {
+            "got": "good morning",
+            "pass": true
+          },
+          "prompt": "おはよう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "remember",
+            "pass": true
+          },
+          "expected": "remember",
+          "legacy_parent": {
+            "got": "remember",
+            "pass": true
+          },
+          "prompt": "おぼえる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "good night",
+            "pass": true
+          },
+          "expected": "good night",
+          "legacy_parent": {
+            "got": "good night",
+            "pass": true
+          },
+          "prompt": "おやすみ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "finish",
+            "pass": true
+          },
+          "expected": "finish",
+          "legacy_parent": {
+            "got": "finish",
+            "pass": true
+          },
+          "prompt": "おわる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "temperature",
+            "pass": true
+          },
+          "expected": "temperature",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": false
+          },
+          "prompt": "おんど"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "open source",
+            "pass": true
+          },
+          "expected": "open source",
+          "legacy_parent": {
+            "got": "open source",
+            "pass": true
+          },
+          "prompt": "おーぷんそーす"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "answer",
+            "pass": true
+          },
+          "expected": "answer",
+          "legacy_parent": {
+            "got": "answer",
+            "pass": true
+          },
+          "prompt": "かいとう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "conversation",
+            "pass": true
+          },
+          "expected": "conversation",
+          "legacy_parent": {
+            "got": "conversation",
+            "pass": true
+          },
+          "prompt": "かいわ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "buy",
+            "pass": true
+          },
+          "expected": "buy",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": false
+          },
+          "prompt": "かう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "frog",
+            "pass": true
+          },
+          "expected": "frog",
+          "legacy_parent": {
+            "got": "frog",
+            "pass": true
+          },
+          "prompt": "かえる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "face",
+            "pass": true
+          },
+          "expected": "face",
+          "legacy_parent": {
+            "got": "bace",
+            "pass": false
+          },
+          "prompt": "かお"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "key",
+            "pass": true
+          },
+          "expected": "key",
+          "legacy_parent": {
+            "got": "key",
+            "pass": true
+          },
+          "prompt": "かぎ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "write",
+            "pass": true
+          },
+          "expected": "write",
+          "legacy_parent": {
+            "got": "write",
+            "pass": true
+          },
+          "prompt": "かく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "umbrella",
+            "pass": true
+          },
+          "expected": "umbrella",
+          "legacy_parent": {
+            "got": "umbrella",
+            "pass": true
+          },
+          "prompt": "かさ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "wind",
+            "pass": true
+          },
+          "expected": "wind",
+          "legacy_parent": {
+            "got": "wind",
+            "pass": true
+          },
+          "prompt": "かぜ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "shoulder",
+            "pass": true
+          },
+          "expected": "shoulder",
+          "legacy_parent": {
+            "got": "shoulder",
+            "pass": true
+          },
+          "prompt": "かた"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sad",
+            "pass": true
+          },
+          "expected": "sad",
+          "legacy_parent": {
+            "got": "sad",
+            "pass": true
+          },
+          "prompt": "かなしい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bag",
+            "pass": true
+          },
+          "expected": "bag",
+          "legacy_parent": {
+            "got": "bag",
+            "pass": true
+          },
+          "prompt": "かばん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "turtle",
+            "pass": true
+          },
+          "expected": "turtle",
+          "legacy_parent": {
+            "got": "turtle",
+            "pass": true
+          },
+          "prompt": "かめ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "body",
+            "pass": true
+          },
+          "expected": "body",
+          "legacy_parent": {
+            "got": "body",
+            "pass": true
+          },
+          "prompt": "からだ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "river",
+            "pass": true
+          },
+          "expected": "river",
+          "legacy_parent": {
+            "got": "river",
+            "pass": true
+          },
+          "prompt": "かわ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "easy",
+            "pass": true
+          },
+          "expected": "easy",
+          "legacy_parent": {
+            "got": "easy",
+            "pass": true
+          },
+          "prompt": "かんたん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "learning",
+            "pass": true
+          },
+          "expected": "learning",
+          "legacy_parent": {
+            "got": "learning",
+            "pass": true
+          },
+          "prompt": "がくしゅう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "student",
+            "pass": true
+          },
+          "expected": "student",
+          "legacy_parent": {
+            "got": "student",
+            "pass": true
+          },
+          "prompt": "がくせい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "school",
+            "pass": true
+          },
+          "expected": "school",
+          "legacy_parent": {
+            "got": "school",
+            "pass": true
+          },
+          "prompt": "がっこう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "listen",
+            "pass": true
+          },
+          "expected": "listen",
+          "legacy_parent": {
+            "got": "listen",
+            "pass": true
+          },
+          "prompt": "きく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "ticket",
+            "pass": true
+          },
+          "expected": "ticket",
+          "legacy_parent": {
+            "got": "ticket",
+            "pass": true
+          },
+          "prompt": "きっぷ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "fox",
+            "pass": true
+          },
+          "expected": "fox",
+          "legacy_parent": {
+            "got": "fox",
+            "pass": true
+          },
+          "prompt": "きつね"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "yesterday",
+            "pass": true
+          },
+          "expected": "yesterday",
+          "legacy_parent": {
+            "got": "yesterday",
+            "pass": true
+          },
+          "prompt": "きのう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "today",
+            "pass": true
+          },
+          "expected": "today",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": false
+          },
+          "prompt": "きょう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "distance",
+            "pass": true
+          },
+          "expected": "distance",
+          "legacy_parent": {
+            "got": "distance",
+            "pass": true
+          },
+          "prompt": "きょり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "giraffe",
+            "pass": true
+          },
+          "expected": "giraffe",
+          "legacy_parent": {
+            "got": "giraffe",
+            "pass": true
+          },
+          "prompt": "きりん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "keyboard",
+            "pass": true
+          },
+          "expected": "keyboard",
+          "legacy_parent": {
+            "got": "keyboard",
+            "pass": true
+          },
+          "prompt": "きーぼーど"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "milk",
+            "pass": true
+          },
+          "expected": "milk",
+          "legacy_parent": {
+            "got": "milk",
+            "pass": true
+          },
+          "prompt": "ぎゅうにゅう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "air",
+            "pass": true
+          },
+          "expected": "air",
+          "legacy_parent": {
+            "got": "air",
+            "pass": true
+          },
+          "prompt": "くうき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "fruit",
+            "pass": true
+          },
+          "expected": "fruit",
+          "legacy_parent": {
+            "got": "fruit",
+            "pass": true
+          },
+          "prompt": "くだもの"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "mouth",
+            "pass": true
+          },
+          "expected": "mouth",
+          "legacy_parent": {
+            "got": "mouth",
+            "pass": true
+          },
+          "prompt": "くち"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "neck",
+            "pass": true
+          },
+          "expected": "neck",
+          "legacy_parent": {
+            "got": "neck",
+            "pass": true
+          },
+          "prompt": "くび"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bear",
+            "pass": true
+          },
+          "expected": "bear",
+          "legacy_parent": {
+            "got": "geography",
+            "pass": false
+          },
+          "prompt": "くま"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "cloudy",
+            "pass": true
+          },
+          "expected": "cloudy",
+          "legacy_parent": {
+            "got": "cloudy",
+            "pass": true
+          },
+          "prompt": "くもり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "dark",
+            "pass": true
+          },
+          "expected": "dark",
+          "legacy_parent": {
+            "got": "dark",
+            "pass": true
+          },
+          "prompt": "くらい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "car",
+            "pass": true
+          },
+          "expected": "car",
+          "legacy_parent": {
+            "got": "car",
+            "pass": true
+          },
+          "prompt": "くるま"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "economics",
+            "pass": true
+          },
+          "expected": "economics",
+          "legacy_parent": {
+            "got": "economics",
+            "pass": true
+          },
+          "prompt": "けいざい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "eraser",
+            "pass": true
+          },
+          "expected": "eraser",
+          "legacy_parent": {
+            "got": "eraser",
+            "pass": true
+          },
+          "prompt": "けしごむ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "blood",
+            "pass": true
+          },
+          "expected": "blood",
+          "legacy_parent": {
+            "got": "food",
+            "pass": false
+          },
+          "prompt": "けつえき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "search",
+            "pass": true
+          },
+          "expected": "search",
+          "legacy_parent": {
+            "got": "search",
+            "pass": true
+          },
+          "prompt": "けんさく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "mind",
+            "pass": true
+          },
+          "expected": "mind",
+          "legacy_parent": {
+            "got": "mous",
+            "pass": false
+          },
+          "prompt": "こころ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "answer",
+            "pass": true
+          },
+          "expected": "answer",
+          "legacy_parent": {
+            "got": "answer",
+            "pass": true
+          },
+          "prompt": "こたえ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "word",
+            "pass": true
+          },
+          "expected": "word",
+          "legacy_parent": {
+            "got": "word",
+            "pass": true
+          },
+          "prompt": "ことば"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "scary",
+            "pass": true
+          },
+          "expected": "scary",
+          "legacy_parent": {
+            "got": "scary",
+            "pass": true
+          },
+          "prompt": "こわい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "hello",
+            "pass": true
+          },
+          "expected": "hello",
+          "legacy_parent": {
+            "got": "hello",
+            "pass": true
+          },
+          "prompt": "こんにちは"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "good evening",
+            "pass": true
+          },
+          "expected": "good evening",
+          "legacy_parent": {
+            "got": "good evening",
+            "pass": true
+          },
+          "prompt": "こんばんは"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "computer",
+            "pass": true
+          },
+          "expected": "computer",
+          "legacy_parent": {
+            "got": "computer",
+            "pass": true
+          },
+          "prompt": "こんぴゅーた"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "coffee",
+            "pass": true
+          },
+          "expected": "coffee",
+          "legacy_parent": {
+            "got": "coffee",
+            "pass": true
+          },
+          "prompt": "こーひー"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "rice",
+            "pass": true
+          },
+          "expected": "rice",
+          "legacy_parent": {
+            "got": "rice",
+            "pass": true
+          },
+          "prompt": "ごはん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sorry",
+            "pass": true
+          },
+          "expected": "sorry",
+          "legacy_parent": {
+            "got": "sorry",
+            "pass": true
+          },
+          "prompt": "ごめんなさい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "wallet",
+            "pass": true
+          },
+          "expected": "wallet",
+          "legacy_parent": {
+            "got": "wallet",
+            "pass": true
+          },
+          "prompt": "さいふ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "fish",
+            "pass": true
+          },
+          "expected": "fish",
+          "legacy_parent": {
+            "got": "fish",
+            "pass": true
+          },
+          "prompt": "さかな"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sugar",
+            "pass": true
+          },
+          "expected": "sugar",
+          "legacy_parent": {
+            "got": "sugar",
+            "pass": true
+          },
+          "prompt": "さとう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "cold",
+            "pass": true
+          },
+          "expected": "cold",
+          "legacy_parent": {
+            "got": "cold",
+            "pass": true
+          },
+          "prompt": "さむい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "goodbye",
+            "pass": true
+          },
+          "expected": "goodbye",
+          "legacy_parent": {
+            "got": "goodbye",
+            "pass": true
+          },
+          "prompt": "さようなら"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "monkey",
+            "pass": true
+          },
+          "expected": "monkey",
+          "legacy_parent": {
+            "got": "monkey",
+            "pass": true
+          },
+          "prompt": "さる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "server",
+            "pass": true
+          },
+          "expected": "server",
+          "legacy_parent": {
+            "got": "server",
+            "pass": true
+          },
+          "prompt": "さーばー"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "salt",
+            "pass": true
+          },
+          "expected": "salt",
+          "legacy_parent": {
+            "got": "salt",
+            "pass": true
+          },
+          "prompt": "しお"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "deer",
+            "pass": true
+          },
+          "expected": "deer",
+          "legacy_parent": {
+            "got": "deer",
+            "pass": true
+          },
+          "prompt": "しか"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "exam",
+            "pass": true
+          },
+          "expected": "exam",
+          "legacy_parent": {
+            "got": "exam",
+            "pass": true
+          },
+          "prompt": "しけん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "tongue",
+            "pass": true
+          },
+          "expected": "tongue",
+          "legacy_parent": {
+            "got": "tongue",
+            "pass": true
+          },
+          "prompt": "した"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "question",
+            "pass": true
+          },
+          "expected": "question",
+          "legacy_parent": {
+            "got": "question",
+            "pass": true
+          },
+          "prompt": "しつもん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "island",
+            "pass": true
+          },
+          "expected": "island",
+          "legacy_parent": {
+            "got": "island",
+            "pass": true
+          },
+          "prompt": "しま"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "close",
+            "pass": true
+          },
+          "expected": "close",
+          "legacy_parent": {
+            "got": "close",
+            "pass": true
+          },
+          "prompt": "しめる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "society",
+            "pass": true
+          },
+          "expected": "society",
+          "legacy_parent": {
+            "got": "society",
+            "pass": true
+          },
+          "prompt": "しゃかい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "week",
+            "pass": true
+          },
+          "expected": "week",
+          "legacy_parent": {
+            "got": "week",
+            "pass": true
+          },
+          "prompt": "しゅう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "homework",
+            "pass": true
+          },
+          "expected": "homework",
+          "legacy_parent": {
+            "got": "homework",
+            "pass": true
+          },
+          "prompt": "しゅくだい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "know",
+            "pass": true
+          },
+          "expected": "know",
+          "legacy_parent": {
+            "got": "know",
+            "pass": true
+          },
+          "prompt": "しる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "traffic light",
+            "pass": true
+          },
+          "expected": "traffic light",
+          "legacy_parent": {
+            "got": "traffic light",
+            "pass": true
+          },
+          "prompt": "しんごう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "time",
+            "pass": true
+          },
+          "expected": "time",
+          "legacy_parent": {
+            "got": "time",
+            "pass": true
+          },
+          "prompt": "じかん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "dictionary",
+            "pass": true
+          },
+          "expected": "dictionary",
+          "legacy_parent": {
+            "got": "dictionary",
+            "pass": true
+          },
+          "prompt": "じしょ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bicycle",
+            "pass": true
+          },
+          "expected": "bicycle",
+          "legacy_parent": {
+            "got": "bicycle",
+            "pass": true
+          },
+          "prompt": "じてんしゃ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "gravity",
+            "pass": true
+          },
+          "expected": "gravity",
+          "legacy_parent": {
+            "got": "gravity",
+            "pass": true
+          },
+          "prompt": "じゅうりょく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "lesson",
+            "pass": true
+          },
+          "expected": "lesson",
+          "legacy_parent": {
+            "got": "lesson",
+            "pass": true
+          },
+          "prompt": "じゅぎょう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "information",
+            "pass": true
+          },
+          "expected": "information",
+          "legacy_parent": {
+            "got": "information",
+            "pass": true
+          },
+          "prompt": "じょうほう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "mathematics",
+            "pass": true
+          },
+          "expected": "mathematics",
+          "legacy_parent": {
+            "got": "mathematics",
+            "pass": true
+          },
+          "prompt": "すうがく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "storage",
+            "pass": true
+          },
+          "expected": "storage",
+          "legacy_parent": {
+            "got": "storage",
+            "pass": true
+          },
+          "prompt": "すとれーじ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "excuse me",
+            "pass": true
+          },
+          "expected": "excuse me",
+          "legacy_parent": {
+            "got": "excuse me",
+            "pass": true
+          },
+          "prompt": "すみません"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "organism",
+            "pass": true
+          },
+          "expected": "organism",
+          "legacy_parent": {
+            "got": "organism",
+            "pass": true
+          },
+          "prompt": "せいぶつ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "security",
+            "pass": true
+          },
+          "expected": "security",
+          "legacy_parent": {
+            "got": "security",
+            "pass": true
+          },
+          "prompt": "せきゅりてぃ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "back",
+            "pass": true
+          },
+          "expected": "back",
+          "legacy_parent": {
+            "got": "back",
+            "pass": true
+          },
+          "prompt": "せなか"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "teacher",
+            "pass": true
+          },
+          "expected": "teacher",
+          "legacy_parent": {
+            "got": "teacher",
+            "pass": true
+          },
+          "prompt": "せんせい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "washing machine",
+            "pass": true
+          },
+          "expected": "washing machine",
+          "legacy_parent": {
+            "got": "washing machine",
+            "pass": true
+          },
+          "prompt": "せんたくき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "speed",
+            "pass": true
+          },
+          "expected": "speed",
+          "legacy_parent": {
+            "got": "speed",
+            "pass": true
+          },
+          "prompt": "そくど"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "software",
+            "pass": true
+          },
+          "expected": "software",
+          "legacy_parent": {
+            "got": "software",
+            "pass": true
+          },
+          "prompt": "そふとうぇあ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sky",
+            "pass": true
+          },
+          "expected": "sky",
+          "legacy_parent": {
+            "got": "sky",
+            "pass": true
+          },
+          "prompt": "そら"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "elephant",
+            "pass": true
+          },
+          "expected": "elephant",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": false
+          },
+          "prompt": "ぞう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "volume",
+            "pass": true
+          },
+          "expected": "volume",
+          "legacy_parent": {
+            "got": "volume",
+            "pass": true
+          },
+          "prompt": "たいせき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sun",
+            "pass": true
+          },
+          "expected": "sun",
+          "legacy_parent": {
+            "got": "sun",
+            "pass": true
+          },
+          "prompt": "たいよう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "high",
+            "pass": true
+          },
+          "expected": "high",
+          "legacy_parent": {
+            "got": "high",
+            "pass": true
+          },
+          "prompt": "たかい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "raccoon dog",
+            "pass": true
+          },
+          "expected": "raccoon dog",
+          "legacy_parent": {
+            "got": "raccoon dog",
+            "pass": true
+          },
+          "prompt": "たぬき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "fun",
+            "pass": true
+          },
+          "expected": "fun",
+          "legacy_parent": {
+            "got": "fun",
+            "pass": true
+          },
+          "prompt": "たのしい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "food",
+            "pass": true
+          },
+          "expected": "food",
+          "legacy_parent": {
+            "got": "food",
+            "pass": true
+          },
+          "prompt": "たべもの"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "eat",
+            "pass": true
+          },
+          "expected": "eat",
+          "legacy_parent": {
+            "got": "eat",
+            "pass": true
+          },
+          "prompt": "たべる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "egg",
+            "pass": true
+          },
+          "expected": "egg",
+          "legacy_parent": {
+            "got": "egg",
+            "pass": true
+          },
+          "prompt": "たまご"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "small",
+            "pass": true
+          },
+          "expected": "small",
+          "legacy_parent": {
+            "got": "small",
+            "pass": true
+          },
+          "prompt": "ちいさい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "earth",
+            "pass": true
+          },
+          "expected": "earth",
+          "legacy_parent": {
+            "got": "earth",
+            "pass": true
+          },
+          "prompt": "ちきゅう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "butterfly",
+            "pass": true
+          },
+          "expected": "butterfly",
+          "legacy_parent": {
+            "got": "butterfly",
+            "pass": true
+          },
+          "prompt": "ちょう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "copyright",
+            "pass": true
+          },
+          "expected": "copyright",
+          "legacy_parent": {
+            "got": "copyright",
+            "pass": true
+          },
+          "prompt": "ちょさくけん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "geography",
+            "pass": true
+          },
+          "expected": "geography",
+          "legacy_parent": {
+            "got": "geography",
+            "pass": true
+          },
+          "prompt": "ちり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "use",
+            "pass": true
+          },
+          "expected": "use",
+          "legacy_parent": {
+            "got": "use",
+            "pass": true
+          },
+          "prompt": "つかう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "moon",
+            "pass": true
+          },
+          "expected": "moon",
+          "legacy_parent": {
+            "got": "should",
+            "pass": false
+          },
+          "prompt": "つき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "desk",
+            "pass": true
+          },
+          "expected": "desk",
+          "legacy_parent": {
+            "got": "desk",
+            "pass": true
+          },
+          "prompt": "つくえ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "make",
+            "pass": true
+          },
+          "expected": "make",
+          "legacy_parent": {
+            "got": "make",
+            "pass": true
+          },
+          "prompt": "つくる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "soil",
+            "pass": true
+          },
+          "expected": "soil",
+          "legacy_parent": {
+            "got": "soil",
+            "pass": true
+          },
+          "prompt": "つち"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "strong",
+            "pass": true
+          },
+          "expected": "strong",
+          "legacy_parent": {
+            "got": "strong",
+            "pass": true
+          },
+          "prompt": "つよい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "hand",
+            "pass": true
+          },
+          "expected": "hand",
+          "legacy_parent": {
+            "got": "hand",
+            "pass": true
+          },
+          "prompt": "て"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "test",
+            "pass": true
+          },
+          "expected": "test",
+          "legacy_parent": {
+            "got": "test",
+            "pass": true
+          },
+          "prompt": "てすと"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "television",
+            "pass": true
+          },
+          "expected": "television",
+          "legacy_parent": {
+            "got": "television",
+            "pass": true
+          },
+          "prompt": "てれび"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "weather",
+            "pass": true
+          },
+          "expected": "weather",
+          "legacy_parent": {
+            "got": "weather",
+            "pass": true
+          },
+          "prompt": "てんき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "debugging",
+            "pass": true
+          },
+          "expected": "debugging",
+          "legacy_parent": {
+            "got": "debugging",
+            "pass": true
+          },
+          "prompt": "でばっぐ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "electricity",
+            "pass": true
+          },
+          "expected": "electricity",
+          "legacy_parent": {
+            "got": "electricity",
+            "pass": true
+          },
+          "prompt": "でんき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "electronic dictionary",
+            "pass": true
+          },
+          "expected": "electronic dictionary",
+          "legacy_parent": {
+            "got": "electronic dictionary",
+            "pass": true
+          },
+          "prompt": "でんしじしょ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "train",
+            "pass": true
+          },
+          "expected": "train",
+          "legacy_parent": {
+            "got": "train",
+            "pass": true
+          },
+          "prompt": "でんしゃ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "telephone",
+            "pass": true
+          },
+          "expected": "telephone",
+          "legacy_parent": {
+            "got": "telephone",
+            "pass": true
+          },
+          "prompt": "でんわ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "data",
+            "pass": true
+          },
+          "expected": "data",
+          "legacy_parent": {
+            "got": "data",
+            "pass": true
+          },
+          "prompt": "でーた"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "clock",
+            "pass": true
+          },
+          "expected": "clock",
+          "legacy_parent": {
+            "got": "clock",
+            "pass": true
+          },
+          "prompt": "とけい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "year",
+            "pass": true
+          },
+          "expected": "year",
+          "legacy_parent": {
+            "got": "year",
+            "pass": true
+          },
+          "prompt": "とし"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "door",
+            "pass": true
+          },
+          "expected": "door",
+          "legacy_parent": {
+            "got": "door",
+            "pass": true
+          },
+          "prompt": "とびら"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "tiger",
+            "pass": true
+          },
+          "expected": "tiger",
+          "legacy_parent": {
+            "got": "tiger",
+            "pass": true
+          },
+          "prompt": "とら"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bird",
+            "pass": true
+          },
+          "expected": "bird",
+          "legacy_parent": {
+            "got": "bird",
+            "pass": true
+          },
+          "prompt": "とり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "long",
+            "pass": true
+          },
+          "expected": "long",
+          "legacy_parent": {
+            "got": "long",
+            "pass": true
+          },
+          "prompt": "ながい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "summer",
+            "pass": true
+          },
+          "expected": "summer",
+          "legacy_parent": {
+            "got": "summer",
+            "pass": true
+          },
+          "prompt": "なつ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "meat",
+            "pass": true
+          },
+          "expected": "meat",
+          "legacy_parent": {
+            "got": "meat",
+            "pass": true
+          },
+          "prompt": "にく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "cat",
+            "pass": true
+          },
+          "expected": "cat",
+          "legacy_parent": {
+            "got": "cat",
+            "pass": true
+          },
+          "prompt": "ねこ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "mouse",
+            "pass": true
+          },
+          "expected": "mouse",
+          "legacy_parent": {
+            "got": "mouse",
+            "pass": true
+          },
+          "prompt": "ねずみ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "network",
+            "pass": true
+          },
+          "expected": "network",
+          "legacy_parent": {
+            "got": "network",
+            "pass": true
+          },
+          "prompt": "ねっとわーく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sleep",
+            "pass": true
+          },
+          "expected": "sleep",
+          "legacy_parent": {
+            "got": "sleep",
+            "pass": true
+          },
+          "prompt": "ねる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "drink",
+            "pass": true
+          },
+          "expected": "drink",
+          "legacy_parent": {
+            "got": "drink",
+            "pass": true
+          },
+          "prompt": "のみもの"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "drink",
+            "pass": true
+          },
+          "expected": "drink",
+          "legacy_parent": {
+            "got": "drink",
+            "pass": true
+          },
+          "prompt": "のむ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "notebook",
+            "pass": true
+          },
+          "expected": "notebook",
+          "legacy_parent": {
+            "got": "notebook",
+            "pass": true
+          },
+          "prompt": "のーと"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "yes",
+            "pass": true
+          },
+          "expected": "yes",
+          "legacy_parent": {
+            "got": "yes",
+            "pass": true
+          },
+          "prompt": "はい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "run",
+            "pass": true
+          },
+          "expected": "run",
+          "legacy_parent": {
+            "got": "run",
+            "pass": true
+          },
+          "prompt": "はしる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "start",
+            "pass": true
+          },
+          "expected": "start",
+          "legacy_parent": {
+            "got": "start",
+            "pass": true
+          },
+          "prompt": "はじめる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bee",
+            "pass": true
+          },
+          "expected": "bee",
+          "legacy_parent": {
+            "got": "bee",
+            "pass": true
+          },
+          "prompt": "はち"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "speak",
+            "pass": true
+          },
+          "expected": "speak",
+          "legacy_parent": {
+            "got": "speak",
+            "pass": true
+          },
+          "prompt": "はなす"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "fast",
+            "pass": true
+          },
+          "expected": "fast",
+          "legacy_parent": {
+            "got": "fast",
+            "pass": true
+          },
+          "prompt": "はやい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "woods",
+            "pass": true
+          },
+          "expected": "woods",
+          "legacy_parent": {
+            "got": "woods",
+            "pass": true
+          },
+          "prompt": "はやし"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "spring",
+            "pass": true
+          },
+          "expected": "spring",
+          "legacy_parent": {
+            "got": "spring",
+            "pass": true
+          },
+          "prompt": "はる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sunny",
+            "pass": true
+          },
+          "expected": "sunny",
+          "legacy_parent": {
+            "got": "sunny",
+            "pass": true
+          },
+          "prompt": "はれ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "hardware",
+            "pass": true
+          },
+          "expected": "hardware",
+          "legacy_parent": {
+            "got": "hardware",
+            "pass": true
+          },
+          "prompt": "はーどうぇあ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bug",
+            "pass": true
+          },
+          "expected": "bug",
+          "legacy_parent": {
+            "got": "bug",
+            "pass": true
+          },
+          "prompt": "ばぐ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bus",
+            "pass": true
+          },
+          "expected": "bus",
+          "legacy_parent": {
+            "got": "bus",
+            "pass": true
+          },
+          "prompt": "ばす"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "banana",
+            "pass": true
+          },
+          "expected": "banana",
+          "legacy_parent": {
+            "got": "banana",
+            "pass": true
+          },
+          "prompt": "ばなな"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "dinner",
+            "pass": true
+          },
+          "expected": "dinner",
+          "legacy_parent": {
+            "got": "dinner",
+            "pass": true
+          },
+          "prompt": "ばんごはん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "password",
+            "pass": true
+          },
+          "expected": "password",
+          "legacy_parent": {
+            "got": "password",
+            "pass": true
+          },
+          "prompt": "ぱすわーど"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bread",
+            "pass": true
+          },
+          "expected": "bread",
+          "legacy_parent": {
+            "got": "bread",
+            "pass": true
+          },
+          "prompt": "ぱん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "panda",
+            "pass": true
+          },
+          "expected": "panda",
+          "legacy_parent": {
+            "got": "panda",
+            "pass": true
+          },
+          "prompt": "ぱんだ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "fire",
+            "pass": true
+          },
+          "expected": "fire",
+          "legacy_parent": {
+            "got": "ot",
+            "pass": false
+          },
+          "prompt": "ひ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "light",
+            "pass": true
+          },
+          "expected": "light",
+          "legacy_parent": {
+            "got": "light",
+            "pass": true
+          },
+          "prompt": "ひかり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "low",
+            "pass": true
+          },
+          "expected": "low",
+          "legacy_parent": {
+            "got": "low",
+            "pass": true
+          },
+          "prompt": "ひくい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "airplane",
+            "pass": true
+          },
+          "expected": "airplane",
+          "legacy_parent": {
+            "got": "airplane",
+            "pass": true
+          },
+          "prompt": "ひこうき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "knee",
+            "pass": true
+          },
+          "expected": "knee",
+          "legacy_parent": {
+            "got": "knee",
+            "pass": true
+          },
+          "prompt": "ひざ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "sheep",
+            "pass": true
+          },
+          "expected": "sheep",
+          "legacy_parent": {
+            "got": "sheep",
+            "pass": true
+          },
+          "prompt": "ひつじ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "noon",
+            "pass": true
+          },
+          "expected": "noon",
+          "legacy_parent": {
+            "got": "noon",
+            "pass": true
+          },
+          "prompt": "ひる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "lunch",
+            "pass": true
+          },
+          "expected": "lunch",
+          "legacy_parent": {
+            "got": "lunch",
+            "pass": true
+          },
+          "prompt": "ひるごはん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "quality",
+            "pass": true
+          },
+          "expected": "quality",
+          "legacy_parent": {
+            "got": "quality",
+            "pass": true
+          },
+          "prompt": "ひんしつ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "file",
+            "pass": true
+          },
+          "expected": "file",
+          "legacy_parent": {
+            "got": "file",
+            "pass": true
+          },
+          "prompt": "ふぁいる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "folder",
+            "pass": true
+          },
+          "expected": "folder",
+          "legacy_parent": {
+            "got": "folder",
+            "pass": true
+          },
+          "prompt": "ふぉるだ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "ship",
+            "pass": true
+          },
+          "expected": "ship",
+          "legacy_parent": {
+            "got": "ship",
+            "pass": true
+          },
+          "prompt": "ふね"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "winter",
+            "pass": true
+          },
+          "expected": "winter",
+          "legacy_parent": {
+            "got": "file",
+            "pass": false
+          },
+          "prompt": "ふゆ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "old",
+            "pass": true
+          },
+          "expected": "old",
+          "legacy_parent": {
+            "got": "old",
+            "pass": true
+          },
+          "prompt": "ふるい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "pig",
+            "pass": true
+          },
+          "expected": "pig",
+          "legacy_parent": {
+            "got": "pysin",
+            "pass": false
+          },
+          "prompt": "ぶた"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "physics",
+            "pass": true
+          },
+          "expected": "physics",
+          "legacy_parent": {
+            "got": "physics",
+            "pass": true
+          },
+          "prompt": "ぶつり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "grape",
+            "pass": true
+          },
+          "expected": "grape",
+          "legacy_parent": {
+            "got": "grape",
+            "pass": true
+          },
+          "prompt": "ぶどう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "culture",
+            "pass": true
+          },
+          "expected": "culture",
+          "legacy_parent": {
+            "got": "culture",
+            "pass": true
+          },
+          "prompt": "ぶんか"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "text",
+            "pass": true
+          },
+          "expected": "text",
+          "legacy_parent": {
+            "got": "text",
+            "pass": true
+          },
+          "prompt": "ぶんしょう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "program",
+            "pass": true
+          },
+          "expected": "program",
+          "legacy_parent": {
+            "got": "program",
+            "pass": true
+          },
+          "prompt": "ぷろぐらむ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "snake",
+            "pass": true
+          },
+          "expected": "snake",
+          "legacy_parent": {
+            "got": "snake",
+            "pass": true
+          },
+          "prompt": "へび"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "room",
+            "pass": true
+          },
+          "expected": "room",
+          "legacy_parent": {
+            "got": "room",
+            "pass": true
+          },
+          "prompt": "へや"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bed",
+            "pass": true
+          },
+          "expected": "bed",
+          "legacy_parent": {
+            "got": "bed",
+            "pass": true
+          },
+          "prompt": "べっど"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "study",
+            "pass": true
+          },
+          "expected": "study",
+          "legacy_parent": {
+            "got": "study",
+            "pass": true
+          },
+          "prompt": "べんきょう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "pen",
+            "pass": true
+          },
+          "expected": "pen",
+          "legacy_parent": {
+            "got": "pen",
+            "pass": true
+          },
+          "prompt": "ぺん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "law",
+            "pass": true
+          },
+          "expected": "law",
+          "legacy_parent": {
+            "got": "law",
+            "pass": true
+          },
+          "prompt": "ほうりつ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "star",
+            "pass": true
+          },
+          "expected": "star",
+          "legacy_parent": {
+            "got": "star",
+            "pass": true
+          },
+          "prompt": "ほし"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "bone",
+            "pass": true
+          },
+          "expected": "bone",
+          "legacy_parent": {
+            "got": "bone",
+            "pass": true
+          },
+          "prompt": "ほね"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "book",
+            "pass": true
+          },
+          "expected": "book",
+          "legacy_parent": {
+            "got": "book",
+            "pass": true
+          },
+          "prompt": "ほん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "translation",
+            "pass": true
+          },
+          "expected": "translation",
+          "legacy_parent": {
+            "got": "translation",
+            "pass": true
+          },
+          "prompt": "ほんやく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "every day",
+            "pass": true
+          },
+          "expected": "every day",
+          "legacy_parent": {
+            "got": "every day",
+            "pass": true
+          },
+          "prompt": "まいにち"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "wait",
+            "pass": true
+          },
+          "expected": "wait",
+          "legacy_parent": {
+            "got": "wait",
+            "pass": true
+          },
+          "prompt": "まつ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "window",
+            "pass": true
+          },
+          "expected": "window",
+          "legacy_parent": {
+            "got": "window",
+            "pass": true
+          },
+          "prompt": "まど"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "learn",
+            "pass": true
+          },
+          "expected": "learn",
+          "legacy_parent": {
+            "got": "learn",
+            "pass": true
+          },
+          "prompt": "まなぶ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "mandarin orange",
+            "pass": true
+          },
+          "expected": "mandarin orange",
+          "legacy_parent": {
+            "got": "mandarin orange",
+            "pass": true
+          },
+          "prompt": "みかん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "short",
+            "pass": true
+          },
+          "expected": "short",
+          "legacy_parent": {
+            "got": "short",
+            "pass": true
+          },
+          "prompt": "みじかい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "water",
+            "pass": true
+          },
+          "expected": "water",
+          "legacy_parent": {
+            "got": "water",
+            "pass": true
+          },
+          "prompt": "みず"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "lake",
+            "pass": true
+          },
+          "expected": "lake",
+          "legacy_parent": {
+            "got": "lake",
+            "pass": true
+          },
+          "prompt": "みずうみ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "road",
+            "pass": true
+          },
+          "expected": "road",
+          "legacy_parent": {
+            "got": "bee",
+            "pass": false
+          },
+          "prompt": "みち"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "ear",
+            "pass": true
+          },
+          "expected": "ear",
+          "legacy_parent": {
+            "got": "ear",
+            "pass": true
+          },
+          "prompt": "みみ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "see",
+            "pass": true
+          },
+          "expected": "see",
+          "legacy_parent": {
+            "got": "see",
+            "pass": true
+          },
+          "prompt": "みる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "insect",
+            "pass": true
+          },
+          "expected": "insect",
+          "legacy_parent": {
+            "got": "insect",
+            "pass": true
+          },
+          "prompt": "むし"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "difficult",
+            "pass": true
+          },
+          "expected": "difficult",
+          "legacy_parent": {
+            "got": "difficult",
+            "pass": true
+          },
+          "prompt": "むずかしい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "chest",
+            "pass": true
+          },
+          "expected": "chest",
+          "legacy_parent": {
+            "got": "chest",
+            "pass": true
+          },
+          "prompt": "むね"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "eye",
+            "pass": true
+          },
+          "expected": "eye",
+          "legacy_parent": {
+            "got": "eye",
+            "pass": true
+          },
+          "prompt": "め"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "memory",
+            "pass": true
+          },
+          "expected": "memory",
+          "legacy_parent": {
+            "got": "memory",
+            "pass": true
+          },
+          "prompt": "めもり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "area",
+            "pass": true
+          },
+          "expected": "area",
+          "legacy_parent": {
+            "got": "area",
+            "pass": true
+          },
+          "prompt": "めんせき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "character",
+            "pass": true
+          },
+          "expected": "character",
+          "legacy_parent": {
+            "got": "character",
+            "pass": true
+          },
+          "prompt": "もじ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "forest",
+            "pass": true
+          },
+          "expected": "forest",
+          "legacy_parent": {
+            "got": "forest",
+            "pass": true
+          },
+          "prompt": "もり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "problem",
+            "pass": true
+          },
+          "expected": "problem",
+          "legacy_parent": {
+            "got": "problem",
+            "pass": true
+          },
+          "prompt": "もんだい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "goat",
+            "pass": true
+          },
+          "expected": "goat",
+          "legacy_parent": {
+            "got": "goat",
+            "pass": true
+          },
+          "prompt": "やぎ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "vegetable",
+            "pass": true
+          },
+          "expected": "vegetable",
+          "legacy_parent": {
+            "got": "vegetable",
+            "pass": true
+          },
+          "prompt": "やさい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "kind",
+            "pass": true
+          },
+          "expected": "kind",
+          "legacy_parent": {
+            "got": "kind",
+            "pass": true
+          },
+          "prompt": "やさしい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "mountain",
+            "pass": true
+          },
+          "expected": "mountain",
+          "legacy_parent": {
+            "got": "mountain",
+            "pass": true
+          },
+          "prompt": "やま"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "snow",
+            "pass": true
+          },
+          "expected": "snow",
+          "legacy_parent": {
+            "got": "snow",
+            "pass": true
+          },
+          "prompt": "ゆき"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "finger",
+            "pass": true
+          },
+          "expected": "finger",
+          "legacy_parent": {
+            "got": "finger",
+            "pass": true
+          },
+          "prompt": "ゆび"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "summary",
+            "pass": true
+          },
+          "expected": "summary",
+          "legacy_parent": {
+            "got": "summary",
+            "pass": true
+          },
+          "prompt": "ようやく"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "read",
+            "pass": true
+          },
+          "expected": "read",
+          "legacy_parent": {
+            "got": "read",
+            "pass": true
+          },
+          "prompt": "よむ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "night",
+            "pass": true
+          },
+          "expected": "night",
+          "legacy_parent": {
+            "got": "now",
+            "pass": false
+          },
+          "prompt": "よる"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "weak",
+            "pass": true
+          },
+          "expected": "weak",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": false
+          },
+          "prompt": "よわい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "lion",
+            "pass": true
+          },
+          "expected": "lion",
+          "legacy_parent": {
+            "got": "lion",
+            "pass": true
+          },
+          "prompt": "らいおん"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "license",
+            "pass": true
+          },
+          "expected": "license",
+          "legacy_parent": {
+            "got": "license",
+            "pass": true
+          },
+          "prompt": "らいせんす"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "squirrel",
+            "pass": true
+          },
+          "expected": "squirrel",
+          "legacy_parent": {
+            "got": "squirrel",
+            "pass": true
+          },
+          "prompt": "りす"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "cooking",
+            "pass": true
+          },
+          "expected": "cooking",
+          "legacy_parent": {
+            "got": "answer",
+            "pass": false
+          },
+          "prompt": "りょうり"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "travel",
+            "pass": true
+          },
+          "expected": "travel",
+          "legacy_parent": {
+            "got": "travel",
+            "pass": true
+          },
+          "prompt": "りょこう"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "apple",
+            "pass": true
+          },
+          "expected": "apple",
+          "legacy_parent": {
+            "got": "apple",
+            "pass": true
+          },
+          "prompt": "りんご"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "example",
+            "pass": true
+          },
+          "expected": "example",
+          "legacy_parent": {
+            "got": "sunny",
+            "pass": false
+          },
+          "prompt": "れい"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "refrigerator",
+            "pass": true
+          },
+          "expected": "refrigerator",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": false
+          },
+          "prompt": "れいぞうこ"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "history",
+            "pass": true
+          },
+          "expected": "history",
+          "legacy_parent": {
+            "got": "history",
+            "pass": true
+          },
+          "prompt": "れきし"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "forget",
+            "pass": true
+          },
+          "expected": "forget",
+          "legacy_parent": {
+            "got": "forget",
+            "pass": true
+          },
+          "prompt": "わすれる"
+        }
+      ],
+      "exllm_jptoen_pass": 266,
+      "legacy_parent_pass": 244,
+      "total": 266
+    },
+    "device_regression": {
+      "cases": [
+        {
+          "exllm_jptoen": {
+            "got": "sea",
+            "pass": true
+          },
+          "expected": "sea",
+          "legacy_parent": {
+            "got": "sea",
+            "pass": true
+          },
+          "prompt": "うみをえいごでいうと？"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "good morning",
+            "pass": true
+          },
+          "expected": "good morning",
+          "legacy_parent": {
+            "got": "good morning",
+            "pass": true
+          },
+          "prompt": "おはようをえいごでいうと？"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "hello",
+            "pass": true
+          },
+          "expected": "hello",
+          "legacy_parent": {
+            "got": "hello",
+            "pass": true
+          },
+          "prompt": "こんにちは"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "mountain",
+            "pass": true
+          },
+          "expected": "mountain",
+          "legacy_parent": {
+            "got": "mountain",
+            "pass": true
+          },
+          "prompt": "やまをえいごでいうと？"
+        }
+      ],
+      "exllm_jptoen_pass": 4,
+      "legacy_parent_pass": 4,
+      "total": 4
+    },
+    "general_ood": {
+      "cases": [
+        {
+          "exllm_jptoen": {
+            "got": "unknown",
+            "pass": true
+          },
+          "expected": "unknown",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": true
+          },
+          "prompt": "おふらいんとはなんですか？"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "unknown",
+            "pass": true
+          },
+          "expected": "unknown",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": true
+          },
+          "prompt": "きょうのてんきは？"
+        },
+        {
+          "exllm_jptoen": {
+            "got": "unknown",
+            "pass": true
+          },
+          "expected": "unknown",
+          "legacy_parent": {
+            "got": "unknown",
+            "pass": true
+          },
+          "prompt": "なにができますか？"
+        }
+      ],
+      "exllm_jptoen_pass": 3,
+      "legacy_parent_pass": 3,
+      "total": 3
+    }
+  }
+}

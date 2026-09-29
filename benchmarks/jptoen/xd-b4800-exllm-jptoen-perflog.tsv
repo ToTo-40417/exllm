@@ -1,0 +1,76 @@
+RUN	2026-09-27T21:00:24	think=0	in=8	out=5	ttft_ms=12702	total_ms=21285	decode_ms=6864	tok_s_x100=58	prompt=こんにちは
+TOKEN	1	ready_ms=12702	delta_ms=12702
+TOKEN	2	ready_ms=14417	delta_ms=1715
+TOKEN	3	ready_ms=16133	delta_ms=1716
+TOKEN	4	ready_ms=17849	delta_ms=1716
+TOKEN	5	ready_ms=19566	delta_ms=1717
+RUN	2026-09-27T21:01:35	think=0	in=14	out=7	ttft_ms=22140	total_ms=34208	decode_ms=10341	tok_s_x100=58	prompt=うみをえいごでいうと？
+TOKEN	1	ready_ms=22140	delta_ms=22140
+TOKEN	2	ready_ms=23862	delta_ms=1722
+TOKEN	3	ready_ms=25584	delta_ms=1722
+TOKEN	4	ready_ms=27307	delta_ms=1723
+TOKEN	5	ready_ms=29031	delta_ms=1724
+TOKEN	6	ready_ms=30756	delta_ms=1725
+TOKEN	7	ready_ms=32481	delta_ms=1725
+RUN	2026-09-27T21:02:22	think=0	in=14	out=7	ttft_ms=22140	total_ms=34208	decode_ms=10341	tok_s_x100=58	prompt=やまをえいごでいうと？
+TOKEN	1	ready_ms=22140	delta_ms=22140
+TOKEN	2	ready_ms=23861	delta_ms=1721
+TOKEN	3	ready_ms=25583	delta_ms=1722
+TOKEN	4	ready_ms=27307	delta_ms=1724
+TOKEN	5	ready_ms=29031	delta_ms=1724
+TOKEN	6	ready_ms=30756	delta_ms=1725
+TOKEN	7	ready_ms=32481	delta_ms=1725
+RUN	2026-09-27T21:03:10	think=0	in=18	out=7	ttft_ms=28446	total_ms=40543	decode_ms=10366	tok_s_x100=57	prompt=あなたは何というモデルですか？
+TOKEN	1	ready_ms=28446	delta_ms=28446
+TOKEN	2	ready_ms=30171	delta_ms=1725
+TOKEN	3	ready_ms=31897	delta_ms=1726
+TOKEN	4	ready_ms=33625	delta_ms=1728
+TOKEN	5	ready_ms=35353	delta_ms=1728
+TOKEN	6	ready_ms=37082	delta_ms=1729
+TOKEN	7	ready_ms=38812	delta_ms=1730
+RUN	2026-09-27T21:04:33	think=0	in=16	out=12	ttft_ms=25291	total_ms=46031	decode_ms=19007	tok_s_x100=57	prompt=おはようをえいごでいうと？
+TOKEN	1	ready_ms=25291	delta_ms=25291
+TOKEN	2	ready_ms=27015	delta_ms=1724
+TOKEN	3	ready_ms=28739	delta_ms=1724
+TOKEN	4	ready_ms=30464	delta_ms=1725
+TOKEN	5	ready_ms=32190	delta_ms=1726
+TOKEN	6	ready_ms=33917	delta_ms=1727
+TOKEN	7	ready_ms=35645	delta_ms=1728
+TOKEN	8	ready_ms=37373	delta_ms=1728
+TOKEN	9	ready_ms=39103	delta_ms=1730
+TOKEN	10	ready_ms=40834	delta_ms=1731
+TOKEN	11	ready_ms=42565	delta_ms=1731
+TOKEN	12	ready_ms=44298	delta_ms=1733
+RUN	2026-09-27T21:05:39	think=0	in=7	out=11	ttft_ms=11137	total_ms=30044	decode_ms=17184	tok_s_x100=58	prompt=ぎんこう
+TOKEN	1	ready_ms=11137	delta_ms=11137
+TOKEN	2	ready_ms=12852	delta_ms=1715
+TOKEN	3	ready_ms=14567	delta_ms=1715
+TOKEN	4	ready_ms=16283	delta_ms=1716
+TOKEN	5	ready_ms=18000	delta_ms=1717
+TOKEN	6	ready_ms=19717	delta_ms=1717
+TOKEN	7	ready_ms=21436	delta_ms=1719
+TOKEN	8	ready_ms=23156	delta_ms=1720
+TOKEN	9	ready_ms=24877	delta_ms=1721
+TOKEN	10	ready_ms=26598	delta_ms=1721
+TOKEN	11	ready_ms=28321	delta_ms=1723
+RUN	2026-09-27T21:06:14	think=0	in=8	out=7	ttft_ms=12707	total_ms=24733	decode_ms=10305	tok_s_x100=58	prompt=びょういん
+TOKEN	1	ready_ms=12707	delta_ms=12707
+TOKEN	2	ready_ms=14422	delta_ms=1715
+TOKEN	3	ready_ms=16138	delta_ms=1716
+TOKEN	4	ready_ms=17855	delta_ms=1717
+TOKEN	5	ready_ms=19573	delta_ms=1718
+TOKEN	6	ready_ms=21292	delta_ms=1719
+TOKEN	7	ready_ms=23012	delta_ms=1720
+RUN	2026-09-27T21:06:40	think=0	in=8	out=4	ttft_ms=12707	total_ms=19573	decode_ms=5148	tok_s_x100=58	prompt=びよういん
+TOKEN	1	ready_ms=12707	delta_ms=12707
+TOKEN	2	ready_ms=14422	delta_ms=1715
+TOKEN	3	ready_ms=16138	delta_ms=1716
+TOKEN	4	ready_ms=17855	delta_ms=1717
+RUN	2026-09-27T21:07:27	think=0	in=15	out=7	ttft_ms=23715	total_ms=35790	decode_ms=10348	tok_s_x100=57	prompt=オフラインとは何ですか？
+TOKEN	1	ready_ms=23715	delta_ms=23715
+TOKEN	2	ready_ms=25438	delta_ms=1723
+TOKEN	3	ready_ms=27161	delta_ms=1723
+TOKEN	4	ready_ms=28885	delta_ms=1724
+TOKEN	5	ready_ms=30610	delta_ms=1725
+TOKEN	6	ready_ms=32336	delta_ms=1726
+TOKEN	7	ready_ms=34063	delta_ms=1727
