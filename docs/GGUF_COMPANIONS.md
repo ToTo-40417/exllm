@@ -8,8 +8,8 @@ The PC artifacts are therefore separately trained Llama-compatible companions. T
 
 | Model repository | GGUF | Parameters | Training / runtime context | RTX 3060 llama.cpp smoke |
 |---|---|---:|---:|---|
-| [EXLLM-JPTOEN](https://huggingface.co/ToTo-40417/EXLLM-JPTOEN) | `EXLLM-JPTOEN-F16.gguf`, SHA-256 `dc4f8031aa74e62595e0dd7bc00ed542320a953c1423ac1d2263a0adbcfad6ef` | 5,441,184 | 128 / 512 | `おはようをえいごでいうと？` → `good morning`, approximately 415 token/s |
-| [EXLLM-ONI5M](https://huggingface.co/ToTo-40417/EXLLM-ONI5M) | `EXLLM-ONI5M-F16.gguf`, SHA-256 `7ea10747a117600d4bf2aed88fd9275a4a720e527dfbaca67364913900586c4e` | 5,441,184 | 128 / 512 | `こんにちは` → the expected ONI greeting, approximately 443 token/s |
+| [EXLLM-JPTOEN](https://huggingface.co/ToTo-40417/EXLLM-JPTOEN) | `EXLLM-JPTOEN-F16.gguf`, SHA-256 `362a237ff01fec440472ceb239fe65b41195e971b55e2fd8609fae3b467f053c` | 5,441,184 | 128 / 512 | `おはようをえいごでいうと？` → `good morning`, approximately 415 token/s |
+| [EXLLM-ONI5M](https://huggingface.co/ToTo-40417/EXLLM-ONI5M) | `EXLLM-ONI5M-F16.gguf`, SHA-256 `6c78fa17860062730bdcfa45835528dc6372b47c0fc28667bd0bc9e4d18483a8` | 5,441,184 | 128 / 512 | `こんにちは` → the expected ONI greeting, approximately 443 token/s |
 
 Both builds use six Llama decoder layers, hidden size 288, FFN size 608, nine attention/KV heads, tied embeddings, a 1,024-piece SentencePiece tokenizer, and random initialization. The model repositories contain the exact training manifest and smoke log.
 
